@@ -19,3 +19,21 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
 }
+
+
+void MainMenu::on_StartTimerClicked() {
+
+}
+
+void MainMenu::on_AddTimeClicked() {
+
+}
+
+void MainMenu::on_AddSkillClicked() {
+
+}
+
+void MainMenu::on_SeeStatsClicked() {
+
+}
+
