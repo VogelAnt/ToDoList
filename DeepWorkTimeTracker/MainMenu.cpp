@@ -5,6 +5,7 @@ MainMenu::MainMenu(QWidget *parent)
 {
 	ui.setupUi(this);
 	SetupMenu();
+	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
 }
 
 void MainMenu::SetupMenu() {
@@ -33,7 +34,6 @@ void MainMenu::on_AddSkillClicked() {
 
 }
 
-void MainMenu::on_SeeStatsClicked() {
-
+void MainMenu::on_SeeStatsClicked(){
 }
 
