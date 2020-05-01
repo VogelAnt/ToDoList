@@ -43,6 +43,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qinputdialog.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
+#include "Skill.h"
 #include "ui_MainMenu.h"
 
 class MainMenu : public QMainWindow
