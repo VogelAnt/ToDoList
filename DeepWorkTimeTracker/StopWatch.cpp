@@ -17,6 +17,7 @@ void StopWatch::on_StartTimer() {
 
 void StopWatch::on_StopTimer() {
 		mRunning = false;
+		m_timeLabel->setText("00:00:00");
 }
 
 void StopWatch::timerEvent(QTimerEvent*) {
