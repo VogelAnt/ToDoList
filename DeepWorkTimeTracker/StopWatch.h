@@ -5,7 +5,7 @@
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qboxlayout.h>
 #include <qdatetime.h>
-#include <QTime>
+#include <qtimer.h>
 #include <QtWidgets/qlabel.h>
 #include <iostream>
 
@@ -15,20 +15,20 @@ class StopWatch : public QWidget
 public:
 	explicit StopWatch(QWidget * parent = 0) : QWidget(parent), mRunning(false), mStartTime(), mLabel(new QLabel("000:00:00:000")), zero('0'){
 		// remove later on
-		QHBoxLayout * hBoxLayout = new QHBoxLayout(this);
-		QPushButton * startButton = new QPushButton("Start");
-		QPushButton * stopButton = new QPushButton("Stop");
+		//QHBoxLayout * hBoxLayout = new QHBoxLayout(this);
+		//QPushButton * startButton = new QPushButton("Start");
+		//QPushButton * stopButton = new QPushButton("Stop");
 
 		// set this in the constructor
-		QFont f("Arial", 22, QFont::Bold);
-		mLabel->setFont(f);
+		//QFont f("Arial", 22, QFont::Bold);
+		//mLabel->setFont(f);
 
-		hBoxLayout->addWidget(startButton);
-		hBoxLayout->addWidget(stopButton);
-		hBoxLayout->addWidget(mLabel);
+		//hBoxLayout->addWidget(startButton);
+		//hBoxLayout->addWidget(stopButton);
+		//hBoxLayout->addWidget(mLabel);
 
-		connect(startButton, SIGNAL(clicked()), SLOT(start()));
-		connect(stopButton, SIGNAL(clicked()), SLOT(stop()));
+		//connect(startButton, SIGNAL(clicked()), SLOT(start()));
+		//connect(stopButton, SIGNAL(clicked()), SLOT(stop()));
 
 		startTimer(0);
 	}
@@ -44,8 +44,9 @@ private:
 	QVBoxLayout *m_vboxlayout = nullptr;
 	// QHBoxLayout *m_hlayout = nullptr;
 	QPushButton *m_startButton = nullptr;
+	QPushButton *m_pauseButton = nullptr;
 	QPushButton *m_stopButton = nullptr;
-
+	QLabel *m_timeLabel = nullptr;
 	bool mRunning;
 	QTime mStartTime;
 	QLabel * mLabel;

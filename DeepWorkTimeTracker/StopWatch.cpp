@@ -1,7 +1,11 @@
 #include "StopWatch.h"
 
 StopWatch::StopWatch(QWidget *parent = 0) : QWidget(parent) {
-
+	m_vboxlayout = new QVBoxLayout(this);
+	m_startButton = new QPushButton("Start Timer");
+	m_pauseButton = new QPushButton("Pause");
+	m_stopButton = new QPushButton("Stop/Reset");
+	
 }
 
 void StopWatch::on_StartTimer() {
