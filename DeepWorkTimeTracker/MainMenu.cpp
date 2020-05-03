@@ -5,10 +5,12 @@ MainMenu::MainMenu(QWidget *parent)
 {
 	ui.setupUi(this);
 	SetupMenu();
+	m_skillManager = new Skill();
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
-	connect(m_addSkillbutton, &QPushButton::clicked, m_skillManager, &Skill::on_AddSkillClicked);
+	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
 	connect(m_statsButton, &QPushButton::clicked, this, &MainMenu::on_SeeStatsClicked);
+	connect(this, &MainMenu::AddNewSkill, m_skillManager, &Skill::on_NewSkillAdded);
 }
 
 void MainMenu::SetupMenu() {
@@ -23,7 +25,6 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
 }
-
 
 void MainMenu::on_StartTimerClicked() {
 	m_stopWatch = new StopWatch();

@@ -4,19 +4,19 @@
 #include <QObject>
 #include <string>
 
+// Rename this class 
 class Skill : public QObject
 {
 	Q_OBJECT
 
 public:
-	Skill(QObject *parent);
+	Skill();
 	Skill(std::string name, int time);
 	~Skill();
 
 public slots:
-	void on_AddSkillClicked();
+	void on_NewSkillAdded(QString newSkill);
 private:
-	QInputDialog *m_skillInputdialog = nullptr;
 	QStringList m_skillList;
 	QTimer *m_skillTimer = nullptr;
 	std::string m_skillName = "";

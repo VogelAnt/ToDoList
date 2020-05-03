@@ -59,6 +59,8 @@ private slots:
 	void on_AddSkillClicked();
 	void on_SeeStatsClicked();
 
+	signals:
+	void AddNewSkill(QString newSkill);
 private:
 	void SetupMenu();
 	Ui::MainMenuClass ui;
