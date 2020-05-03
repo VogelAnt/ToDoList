@@ -56,12 +56,14 @@ public:
 private slots:
 	void on_StartTimerClicked();
 	void on_AddTimeClicked();
+	void on_AddSkillClicked();
 	void on_SeeStatsClicked();
 
 private:
 	void SetupMenu();
 	Ui::MainMenuClass ui;
-	Skill m_skillManager;
+	Skill *m_skillManager = nullptr;
+	QInputDialog *m_skillInputdialog = nullptr;
 	QVBoxLayout *m_buttonLayout = nullptr;
 	QPushButton *m_startTimerbutton = nullptr;
 	QPushButton *m_addSkillbutton = nullptr;

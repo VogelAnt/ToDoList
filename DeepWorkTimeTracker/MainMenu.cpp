@@ -31,6 +31,14 @@ void MainMenu::on_StartTimerClicked() {
 	m_stopWatch->show();
 }
 
+void MainMenu::on_AddSkillClicked() {
+	m_skillInputdialog = new QInputDialog();
+	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill");
+
+	// Enter Name of new skill
+	// Add this new skill name to the QStringList
+}
+
 void MainMenu::on_AddTimeClicked() {
 }
 

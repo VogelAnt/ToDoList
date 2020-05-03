@@ -78,7 +78,3 @@ void StopWatch::timerEvent(QTimerEvent*) {
 		mLabel->setText(diff);
 	}
 }
-
-void on_StopTimer()
-{
-}
