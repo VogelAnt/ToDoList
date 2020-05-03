@@ -15,7 +15,6 @@ StopWatch::StopWatch(){
 	connect(m_startButton, &QPushButton::clicked, this, &StopWatch::on_StartTimer);
 	connect(m_pauseButton, &QPushButton::clicked, this, &StopWatch::on_StartTimer);
 	connect(m_stopButton, &QPushButton::clicked, this, &StopWatch::on_StopTimer);
-
 }
 
 void StopWatch::on_StartTimer() {
