@@ -1,18 +1,26 @@
 #include "StopWatch.h"
 
-StopWatch::StopWatch(QWidget *parent = 0) : QWidget(parent) {
+StopWatch::StopWatch(){
 	m_vboxlayout = new QVBoxLayout(this);
 	m_startButton = new QPushButton("Start Timer");
 	m_pauseButton = new QPushButton("Pause");
 	m_stopButton = new QPushButton("Stop/Reset");
-	
+	m_timeLabel = new QLabel("00:00:00");
+
+	m_vboxlayout->addWidget(m_timeLabel);
+	m_vboxlayout->addWidget(m_startButton);
+	m_vboxlayout->addWidget(m_pauseButton);
+	m_vboxlayout->addWidget(m_stopButton);
+
+	connect(m_startButton, &QPushButton::clicked, this, &StopWatch::on_StartTimer);
+	connect(m_pauseButton, &QPushButton::clicked, this, &StopWatch::on_StartTimer);
+	connect(m_stopButton, &QPushButton::clicked, this, &StopWatch::on_StopTimer);
+
 }
 
 void StopWatch::on_StartTimer() {
-	{
 		mStartTime = QTime::currentTime();
 		mRunning = true;
-	}
 }
 
 void StopWatch::on_StopTimer() {
@@ -35,4 +43,8 @@ void StopWatch::timerEvent(QTimerEvent*) {
 			arg(ms, 3, 10, zero);
 		mLabel->setText(diff);
 	}
+}
+
+void on_StopTimer()
+{
 }

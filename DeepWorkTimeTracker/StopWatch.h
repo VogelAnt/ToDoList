@@ -13,7 +13,7 @@ class StopWatch : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit StopWatch(QWidget * parent = 0) : QWidget(parent), mRunning(false), mStartTime(), mLabel(new QLabel("000:00:00:000")), zero('0'){
+	explicit StopWatch();
 		// remove later on
 		//QHBoxLayout * hBoxLayout = new QHBoxLayout(this);
 		//QPushButton * startButton = new QPushButton("Start");
@@ -30,9 +30,7 @@ public:
 		//connect(startButton, SIGNAL(clicked()), SLOT(start()));
 		//connect(stopButton, SIGNAL(clicked()), SLOT(stop()));
 
-		startTimer(0);
-	}
-
+		//startTimer(0);
 public slots:
 	void on_StartTimer();
 	void on_StopTimer();
@@ -42,7 +40,6 @@ protected:
 
 private:
 	QVBoxLayout *m_vboxlayout = nullptr;
-	// QHBoxLayout *m_hlayout = nullptr;
 	QPushButton *m_startButton = nullptr;
 	QPushButton *m_pauseButton = nullptr;
 	QPushButton *m_stopButton = nullptr;
