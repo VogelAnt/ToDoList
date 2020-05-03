@@ -26,7 +26,6 @@ protected:
 	void timerEvent(QTimerEvent *);
 
 private:
-	QInputDialog *m_skillInputdialog = nullptr;
 	QVBoxLayout *m_vboxlayout = nullptr;
 	QPushButton *m_startButton = nullptr;
 	QPushButton *m_pauseButton = nullptr;

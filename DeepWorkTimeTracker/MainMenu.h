@@ -40,7 +40,6 @@ Each task can be outfitted with sub tasks that require completion before the big
 */
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/qpushbutton.h>
-#include <QtWidgets/qinputdialog.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
 #include "Skill.h"
@@ -57,13 +56,12 @@ public:
 private slots:
 	void on_StartTimerClicked();
 	void on_AddTimeClicked();
-	void on_AddSkillClicked();
 	void on_SeeStatsClicked();
 
 private:
 	void SetupMenu();
 	Ui::MainMenuClass ui;
-	QInputDialog *m_skillInputdialog = nullptr;
+	Skill m_skillManager;
 	QVBoxLayout *m_buttonLayout = nullptr;
 	QPushButton *m_startTimerbutton = nullptr;
 	QPushButton *m_addSkillbutton = nullptr;

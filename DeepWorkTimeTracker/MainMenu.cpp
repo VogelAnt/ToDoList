@@ -6,7 +6,7 @@ MainMenu::MainMenu(QWidget *parent)
 	ui.setupUi(this);
 	SetupMenu();
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
-	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
+	connect(m_addSkillbutton, &QPushButton::clicked, m_skillManager, &Skill::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
 	connect(m_statsButton, &QPushButton::clicked, this, &MainMenu::on_SeeStatsClicked);
 }
@@ -32,14 +32,6 @@ void MainMenu::on_StartTimerClicked() {
 }
 
 void MainMenu::on_AddTimeClicked() {
-	// QStringList containing all available Skills
-	// This list should be on either the SQL server or saved in a csv file
-}
-
-void MainMenu::on_AddSkillClicked() {
-	// Enter Name of new skill
-	// Add this new skill name to the QStringList
-	QString skillName = QInputDialog();
 }
 
 void MainMenu::on_SeeStatsClicked(){
