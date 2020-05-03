@@ -1,6 +1,7 @@
 #pragma once
 #include <qtimer.h>
 #include <QtWidgets/qinputdialog.h>
+#include <qjsonarray.h>
 #include <QObject>
 #include <string>
 
