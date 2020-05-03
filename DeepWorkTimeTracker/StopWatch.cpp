@@ -18,8 +18,24 @@ StopWatch::StopWatch(){
 }
 
 void StopWatch::on_StartTimer() {
-		mStartTime = QTime::currentTime();
+	m_accumulator = 0;
+	m_timer.restart();
+	if (m_timerID == -1) {
+		m_timerID = startTimer(50);
+	}
+	
+	mStartTime = QTime::currentTime();
 		mRunning = true;
+}
+
+void StopWatch::on_PauseTimer() {
+	if (m_timer.isValid()) {
+		m_accumulator += m_timer.elapsed();
+		m_timer.invalidate();
+	}
+	else	{
+
+	}
 }
 
 void StopWatch::on_StopTimer() {
