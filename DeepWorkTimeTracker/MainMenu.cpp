@@ -5,7 +5,10 @@ MainMenu::MainMenu(QWidget *parent)
 {
 	ui.setupUi(this);
 	SetupMenu();
+	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
+	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
+	connect(m_statsButton, &QPushButton::clicked, this, &MainMenu::on_SeeStatsClicked);
 }
 
 void MainMenu::SetupMenu() {
@@ -23,6 +26,9 @@ void MainMenu::SetupMenu() {
 
 
 void MainMenu::on_StartTimerClicked() {
+	m_stopWatch = new StopWatch();
+	m_stopWatch->setWindowTitle("StopWatch");
+	m_stopWatch->show();
 
 }
 

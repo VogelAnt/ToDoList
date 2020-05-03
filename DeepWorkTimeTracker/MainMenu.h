@@ -44,6 +44,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
 #include "Skill.h"
+#include "StopWatch.h"
 #include "ui_MainMenu.h"
 
 class MainMenu : public QMainWindow
@@ -68,4 +69,5 @@ private:
 	QPushButton *m_addTimebutton = nullptr;
 	QPushButton *m_statsButton = nullptr;
 	QWidget *m_centralWidget = nullptr;
+	StopWatch *m_stopWatch = nullptr;
 };
