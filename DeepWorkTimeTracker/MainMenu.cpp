@@ -29,15 +29,17 @@ void MainMenu::on_StartTimerClicked() {
 	m_stopWatch = new StopWatch();
 	m_stopWatch->setWindowTitle("StopWatch");
 	m_stopWatch->show();
-
 }
 
 void MainMenu::on_AddTimeClicked() {
-
+	// QStringList containing all available Skills
+	// This list should be on either the SQL server or saved in a csv file
 }
 
 void MainMenu::on_AddSkillClicked() {
-
+	// Enter Name of new skill
+	// Add this new skill name to the QStringList
+	QString skillName = QInputDialog(this, )
 }
 
 void MainMenu::on_SeeStatsClicked(){

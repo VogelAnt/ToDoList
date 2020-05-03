@@ -4,6 +4,7 @@
 #include <QtWidgets/qwidget.h>
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qboxlayout.h>
+#include <QtWidgets/qinputdialog.h>
 #include <qdatetime.h>
 #include <qelapsedtimer.h>
 #include <qtimer.h>
@@ -25,6 +26,7 @@ protected:
 	void timerEvent(QTimerEvent *);
 
 private:
+	QInputDialog *m_skillInputdialog = nullptr;
 	QVBoxLayout *m_vboxlayout = nullptr;
 	QPushButton *m_startButton = nullptr;
 	QPushButton *m_pauseButton = nullptr;
