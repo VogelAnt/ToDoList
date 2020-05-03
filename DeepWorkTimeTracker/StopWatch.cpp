@@ -34,7 +34,8 @@ void StopWatch::on_PauseTimer() {
 		m_timer.invalidate();
 	}
 	else	{
-
+		m_timer.restart();
+		m_timerID = startTimer(50);
 	}
 }
 
@@ -42,6 +43,24 @@ void StopWatch::on_StopTimer() {
 		mRunning = false;
 		m_timeLabel->setText("00:00:00");
 }
+
+//void StopWatch::timerevent(QTimerEvent * ev) {
+//	if (ev->timerid() != m_timerid) {
+//		qwidget::timerevent(ev);
+//		return;
+//	}
+//	qtime t(0, 0);
+//	t = t.addmsecs(m_accumulator);
+//	if (m_timer.isvalid()) {
+//		t = t.addmsecs(m_timer.elapsed());
+//	}
+//	else {
+//		killtimer(m_timerid);
+//		m_timerid = -1;
+//	}
+//	m_label->settext(t.tostring("h:m:ss.zzz"));
+//}
+
 
 void StopWatch::timerEvent(QTimerEvent*) {
 	if (mRunning)
