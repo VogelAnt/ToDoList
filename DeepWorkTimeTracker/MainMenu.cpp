@@ -39,7 +39,7 @@ void MainMenu::on_AddTimeClicked() {
 void MainMenu::on_AddSkillClicked() {
 	// Enter Name of new skill
 	// Add this new skill name to the QStringList
-	QString skillName = QInputDialog(this, )
+	QString skillName = QInputDialog();
 }
 
 void MainMenu::on_SeeStatsClicked(){

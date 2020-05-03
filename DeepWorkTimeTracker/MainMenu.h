@@ -63,6 +63,7 @@ private slots:
 private:
 	void SetupMenu();
 	Ui::MainMenuClass ui;
+	QInputDialog *m_skillInputdialog = nullptr;
 	QVBoxLayout *m_buttonLayout = nullptr;
 	QPushButton *m_startTimerbutton = nullptr;
 	QPushButton *m_addSkillbutton = nullptr;
