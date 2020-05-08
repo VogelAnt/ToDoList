@@ -11,6 +11,13 @@
 #include <QtWidgets/qlabel.h>
 #include <iostream>
 
+/*
+on_startTimerclicked start timer
+on_Pauseclicked pause timer
+before on_starttimerclicked Pause and Stop timer should be disabled
+on_stop/resetclicked reset timer -> After timer is stopped pick skill to assign time
+if exit timer has been clicked ask if you want to save 
+*/
 class StopWatch : public QWidget
 {
 	Q_OBJECT

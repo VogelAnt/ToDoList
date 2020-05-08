@@ -9,7 +9,7 @@
 #include <QObject>
 #include <string>
 
-// Rename this class to SkillManager ?
+
 class Skill : public QObject {
 	Q_OBJECT
 
