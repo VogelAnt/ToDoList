@@ -1,22 +1,19 @@
 #include "FileManager.h"
 
 FileManager::FileManager(){
-	CheckIfDirectoryExists();
-}
-
-void FileManager::CheckIfDirectoryExists() {
-
 }
 
 void FileManager::WriteFile(QString fileName) {
-
+	CheckIfDirectoryExists();
+	CheckIfFileExists();
 }
 
 void FileManager::ReadFile(QString fileName) {
-
+	CheckIfDirectoryExists();
+	CheckIfFileExists();
 }
 
-void FileManager::CheckIfFileExists() {
+void FileManager::CheckIfDirectoryExists() {
 	QString directoryPath = "C:/Dokumente/ToDoListDirectory";
 	QDir dir(directoryPath);
 	if (dir.exists()) {
@@ -24,6 +21,9 @@ void FileManager::CheckIfFileExists() {
 	}
 	// open file containing skill list
 	// check if directory exists
+}
+
+void FileManager::CheckIfFileExists() {
 }
 
 FileManager::~FileManager(){
