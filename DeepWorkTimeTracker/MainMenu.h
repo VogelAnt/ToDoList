@@ -43,15 +43,18 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
 #include "Skill.h"
+#include "FileManager.h"
 #include "StopWatch.h"
 #include "ui_MainMenu.h"
 /*
+Menu on top where you can choose directory 
 Add Skill clicked -> input skill -> would you like to add preexisting worked off time ?
 Skill and Time should be in key value list
 Add Skill if no time take 0 as value for skill key
 
 Add Time choose an existing skill (load from csv file)
-
+At startup immediatley load skills from csv file into map
+Low priority -> fix the stop watch 
 */
 class MainMenu : public QMainWindow
 {
@@ -80,4 +83,5 @@ private:
 	QPushButton *m_statsButton = nullptr;
 	QWidget *m_centralWidget = nullptr;
 	StopWatch *m_stopWatch = nullptr;
+	FileManager *m_fileManager = nullptr;
 };
