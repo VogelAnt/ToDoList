@@ -40,6 +40,9 @@
     <ClCompile Include="SQLClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileMngr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainMenu.h">
@@ -52,6 +55,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="SQLClient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FileMngr.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
