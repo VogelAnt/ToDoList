@@ -12,6 +12,11 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	connect(this, &MainMenu::AddNewSkill, m_skillManager, &Skill::on_NewSkillAdded);
 }
 
+void MainMenu::InitializeMenuBar() {
+
+}
+
+
 void MainMenu::SetupMenu() {
 	m_centralWidget = this->centralWidget();
 	m_buttonLayout = new QVBoxLayout(m_centralWidget);
@@ -24,6 +29,7 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
 }
+
 
 void MainMenu::on_StartTimerClicked() {
 	m_stopWatch = new StopWatch();

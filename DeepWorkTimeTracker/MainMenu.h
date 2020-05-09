@@ -42,6 +42,10 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
+#include <qaction.h>
+#include <qmenu.h>
+#include <qmenubar.h>
+#include <qstatusbar.h>
 #include "Skill.h"
 #include "FileManager.h"
 #include "StopWatch.h"
@@ -73,6 +77,7 @@ private slots:
 	void AddNewSkill(QString newSkill);
 private:
 	void SetupMenu();
+	void InitializeMenuBar();
 	Ui::MainMenuClass ui;
 	Skill *m_skillManager = nullptr;
 	QInputDialog *m_skillInputdialog = nullptr;
@@ -84,4 +89,6 @@ private:
 	QWidget *m_centralWidget = nullptr;
 	StopWatch *m_stopWatch = nullptr;
 	FileManager *m_fileManager = nullptr;
+	QMenu *m_optionsMenu = nullptr;
+	QAction *m_option = nullptr;
 };
