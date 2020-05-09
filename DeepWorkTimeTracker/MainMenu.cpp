@@ -47,6 +47,15 @@ void MainMenu::on_AddSkillClicked() {
 	// Add this new skill name to the QStringList
 }
 
+MainMenu::~MainMenu(){
+	delete m_centralWidget;
+	delete m_skillInputdialog;
+	delete m_skillManager;
+	delete m_stopWatch;
+	delete m_option;
+	delete m_optionsMenu;
+}
+
 void MainMenu::on_AddTimeClicked() {
 }
 

@@ -66,7 +66,7 @@ class MainMenu : public QMainWindow
 
 public:
 	MainMenu(QWidget *parent = Q_NULLPTR);
-
+	~MainMenu();
 private slots:
 	void on_StartTimerClicked();
 	void on_AddTimeClicked();
