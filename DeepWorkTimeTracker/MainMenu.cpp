@@ -14,9 +14,9 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 }
 
 void MainMenu::InitializeMenuBar() {
-	//m_option = new QAction("&Test", this);
-	//m_optionsMenu = menuBar()->addMenu("&TestMenu");
-	//m_optionsMenu->addAction(m_option);
+	m_option = new QAction("&Test", this);
+	m_optionsMenu = menuBar()->addMenu("&TestMenu");
+	m_optionsMenu->addAction(m_option);
 }
 
 void MainMenu::SetupMenu() {

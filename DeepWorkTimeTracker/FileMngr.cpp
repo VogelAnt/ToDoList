@@ -16,6 +16,14 @@ void FileMngr::CheckFileExists() {
 
 }
 
+void FileMngr::WriteFile(QString fileName) {
+
+}
+
+void FileMngr::ReadFile(QString fileName) {
+
+}
+
 FileMngr::~FileMngr(){
 
 }

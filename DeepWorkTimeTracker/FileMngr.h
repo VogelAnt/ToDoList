@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include <qdir.h>
+#include <iostream>
 
 class FileMngr : public QObject{
 	Q_OBJECT
@@ -13,4 +14,6 @@ public:
 private:
 	void CheckDirectoryExists();
 	void CheckFileExists();
+	void WriteFile(QString fileName);
+	void ReadFile(QString fileName);
 };
