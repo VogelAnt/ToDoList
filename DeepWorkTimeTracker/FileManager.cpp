@@ -1,10 +1,18 @@
 #include "FileManager.h"
 
-FileManager::FileManager(QObject *parent) : QObject(parent){
-
+FileManager::FileManager(){
+	CheckIfDirectoryExists();
 }
 
 void FileManager::CheckIfDirectoryExists() {
+
+}
+
+void FileManager::WriteFile(QString fileName) {
+
+}
+
+void FileManager::ReadFile(QString fileName) {
 
 }
 

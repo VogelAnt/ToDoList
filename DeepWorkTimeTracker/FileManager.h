@@ -3,14 +3,14 @@
 #include <QObject>
 #include <qdir.h>
 #include <iostream>
-class FileManager : public QObject
-{
+class FileManager{
 	Q_OBJECT
 public:
-	FileManager(QObject *parent);
+	FileManager();
 	~FileManager();
 
 	void CheckIfDirectoryExists();
 	void CheckIfFileExists();
-
+	void WriteFile(QString fileName);
+	void ReadFile(QString fileName);
 };
