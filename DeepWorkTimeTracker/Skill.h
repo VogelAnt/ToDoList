@@ -2,13 +2,11 @@
 #include <qtimer.h>
 #include <QtWidgets/qinputdialog.h>
 #include <qjsonarray.h>
-#include <qdir.h>
 #include <qdebug.h>
 #include <qfile.h>
 #include <qtextstream.h>
 #include <QObject>
 #include <string>
-
 
 class Skill : public QObject {
 	Q_OBJECT
