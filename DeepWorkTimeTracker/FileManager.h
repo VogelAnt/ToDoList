@@ -2,7 +2,7 @@
 
 #include <QObject>
 #include <qdir.h>
-
+#include <iostream>
 class FileManager : public QObject
 {
 	Q_OBJECT

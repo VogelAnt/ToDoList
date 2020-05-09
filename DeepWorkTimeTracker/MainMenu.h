@@ -45,7 +45,14 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include "Skill.h"
 #include "StopWatch.h"
 #include "ui_MainMenu.h"
+/*
+Add Skill clicked -> input skill -> would you like to add preexisting worked off time ?
+Skill and Time should be in key value list
+Add Skill if no time take 0 as value for skill key
 
+Add Time choose an existing skill (load from csv file)
+
+*/
 class MainMenu : public QMainWindow
 {
 	Q_OBJECT
