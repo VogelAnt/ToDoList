@@ -4,7 +4,7 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
 	InitializeMenuBar();
 	SetupMenu();
-	m_fileManager = new FileManager();
+	//m_fileManager = new FileManager();
 	m_skillManager = new Skill();
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
 	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);

@@ -80,7 +80,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Skill.cpp" />
@@ -101,9 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="StopWatch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="FileManager.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SQLClient.h" />
