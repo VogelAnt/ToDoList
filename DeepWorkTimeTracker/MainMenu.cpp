@@ -6,7 +6,7 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	m_skillManager = new Skill();
 	InitializeMenuBar();
 	SetupMenu();
-	emit LoadSkills();
+	//LoadSkills();
 	connect(this, &MainMenu::LoadSkills, m_fileManager, &FileMngr::on_LoadSkills);
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
 	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
@@ -47,7 +47,8 @@ void MainMenu::on_StartTimerClicked() {
 void MainMenu::on_AddSkillClicked() {
 	m_skillInputdialog = new QInputDialog();
 	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill");
-	emit AddNewSkill(newSkill);
+	int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input previous time for skill:" + newSkill);
+	emit AddNewSkill(newSkill, newSKilltime);
 	// Enter Name of new skill
 	// Add this new skill name to the QStringList
 }
