@@ -18,7 +18,7 @@ public:
 	~Skill();
 
 public slots:
-	void on_NewSkillAdded(QString newSkill);
+	void on_NewSkillAdded(QString newSkill, int skillTime);
 private:
 	QMap<QString, int> *m_skillTimemap = nullptr;
 	QTimer *m_skillTimer = nullptr;

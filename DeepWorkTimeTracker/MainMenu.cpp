@@ -2,10 +2,12 @@
 
 MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
+	m_fileManager = new FileMngr();
+	m_skillManager = new Skill();
 	InitializeMenuBar();
 	SetupMenu();
-	//m_fileManager = new FileManager();
-	m_skillManager = new Skill();
+	emit LoadSkills();
+	connect(this, &MainMenu::LoadSkills, m_fileManager, &FileMngr::on_LoadSkills);
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
 	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
@@ -32,6 +34,9 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_statsButton);
 }
 
+void MainMenu::LoadSkills() {
+
+}
 
 void MainMenu::on_StartTimerClicked() {
 	m_stopWatch = new StopWatch();

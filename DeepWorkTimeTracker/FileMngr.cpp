@@ -22,6 +22,10 @@ void FileMngr::CheckFileExists() {
 	// check if directory exists
 }
 
+void FileMngr::on_LoadSkills() {
+
+}
+
 void FileMngr::WriteFile(QString fileName) {
 
 }

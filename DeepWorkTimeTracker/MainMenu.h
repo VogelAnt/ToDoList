@@ -72,6 +72,7 @@ private slots:
 
 	signals:
 	void AddNewSkill(QString newSkill);
+	void LoadSkills();
 private:
 	void SetupMenu();
 	void InitializeMenuBar();
