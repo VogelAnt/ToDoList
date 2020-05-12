@@ -2,6 +2,7 @@
 #include <qtimer.h>
 #include <QtWidgets/qinputdialog.h>
 #include <qjsonarray.h>
+#include <qmap.h>
 #include <qdebug.h>
 #include <qfile.h>
 #include <qtextstream.h>
@@ -19,7 +20,7 @@ public:
 public slots:
 	void on_NewSkillAdded(QString newSkill);
 private:
-	QStringList m_skillList;
+	QMap<QString, int> *m_skillTimemap = nullptr;
 	QTimer *m_skillTimer = nullptr;
 	std::string m_skillName = "";
 	int m_skillTime = 0;
