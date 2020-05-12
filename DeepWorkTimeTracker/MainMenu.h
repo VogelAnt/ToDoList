@@ -71,7 +71,7 @@ private slots:
 	void on_SeeStatsClicked();
 
 	signals:
-	void AddNewSkill(QString newSkill);
+	void AddNewSkill(QString newSkill, int skillTime);
 	void LoadSkills();
 private:
 	void SetupMenu();

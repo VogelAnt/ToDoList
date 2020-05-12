@@ -16,7 +16,7 @@ public:
 	Skill();
 	Skill(std::string name, int time);
 	~Skill();
-
+	void ComputeTime(int);
 public slots:
 	void on_NewSkillAdded(QString newSkill, int skillTime);
 private:

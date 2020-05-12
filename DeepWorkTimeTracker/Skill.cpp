@@ -9,5 +9,9 @@ void Skill::on_NewSkillAdded(QString newSkill, int skillTime) {
 	// save skill in file as json 
 }
 
+void Skill::ComputeTime(int) {
+
+}
+
 Skill::~Skill(){
 }
