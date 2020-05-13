@@ -44,7 +44,6 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <qmenubar.h>
 #include <qstatusbar.h>
 #include "Skill.h"
-#include "FileMngr.h"
 #include "StopWatch.h"
 #include "ui_MainMenu.h"
 /*
@@ -85,7 +84,6 @@ private:
 	QPushButton *m_statsButton = nullptr;
 	QWidget *m_centralWidget = nullptr;
 	StopWatch *m_stopWatch = nullptr;
-	FileMngr *m_fileManager = nullptr;
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
 };

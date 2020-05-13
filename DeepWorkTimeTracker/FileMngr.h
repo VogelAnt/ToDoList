@@ -11,11 +11,17 @@ public:
 	FileMngr();
 	FileMngr(QObject *parent);
 	~FileMngr();
+
+
 public slots:
 	void on_LoadSkills();
+
 private:
 	void CheckDirectoryExists();
 	void CheckFileExists();
 	void WriteFile(QString fileName);
 	void ReadFile(QString fileName);
+
+signals:
+	void LoadSkills();
 };
