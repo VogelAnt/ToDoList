@@ -39,6 +39,7 @@ void MainMenu::on_StartTimerClicked() {
 void MainMenu::on_AddSkillClicked() {
 	m_skillInputdialog = new QInputDialog();
 	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill");
+	// Checking function in here ? 
 	int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input previous time for skill:" + newSkill);
 	m_skillManager->AddNewSkill(newSkill, newSKilltime);
 }

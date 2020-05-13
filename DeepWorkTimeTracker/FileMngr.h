@@ -17,6 +17,7 @@ public slots:
 	void on_LoadSkills();
 
 private:
+	QString m_directoryPath;
 	void CheckDirectoryExists();
 	void CheckFileExists();
 	void WriteFile(QString fileName);

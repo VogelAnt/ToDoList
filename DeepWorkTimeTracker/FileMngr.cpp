@@ -13,10 +13,10 @@ void FileMngr::CheckDirectoryExists() {
 }
 
 void FileMngr::CheckFileExists() {
-	QString directoryPath = "C:/Dokumente/ToDoListDirectory";
-	QDir dir(directoryPath);
+	m_directoryPath = "C:/Dokumente/ToDoListDirectory";
+	QDir dir(m_directoryPath);
 	if (dir.exists()) {
-		std::cout << "directory " << directoryPath.toStdString() << " exists " << std::endl;
+		std::cout << "directory " << m_directoryPath.toStdString() << " exists " << std::endl;
 	}
 	// open file containing skill list
 	// check if directory exists
