@@ -17,8 +17,7 @@ public:
 	Skill(std::string name, int time);
 	~Skill();
 	void ComputeTime(int);
-public slots:
-	void on_NewSkillAdded(QString newSkill, int skillTime);
+	void AddNewSkill(QString newSkill, int newSkilltime);
 private:
 	QMap<QString, int> *m_skillTimemap = nullptr;
 	QTimer *m_skillTimer = nullptr;
