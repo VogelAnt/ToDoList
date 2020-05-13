@@ -69,8 +69,6 @@ private slots:
 	void on_AddSkillClicked();
 	void on_SeeStatsClicked();
 
-	signals:
-	void LoadSkills();
 private:
 	void SetupMenu();
 	void InitializeMenuBar();

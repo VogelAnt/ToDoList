@@ -8,6 +8,7 @@
 #include <qfile.h>
 #include <qtextstream.h>
 #include <QObject>
+#include <qstring.h>
 #include <string>
 
 class Skill : public QObject {
@@ -17,15 +18,13 @@ public:
 	Skill();
 	Skill(std::string name, int time);
 	~Skill();
-private:
-	void ComputeTime(int);
 	void AddNewSkill(QString newSkill, int newSkilltime);
+	void ComputeTime(int);
 
+private:
 	QMap<QString, int> *m_skillTimemap = nullptr;
 	FileMngr *m_fileManager = nullptr;
 	QTimer *m_skillTimer = nullptr;
-	std::string m_skillName = "";
-	int m_skillTime = 0;
 signals:
 	void LoadSkills();
 };

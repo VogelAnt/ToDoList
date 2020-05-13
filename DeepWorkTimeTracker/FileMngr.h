@@ -21,6 +21,7 @@ private:
 	void CheckFileExists();
 	void WriteFile(QString fileName);
 	void ReadFile(QString fileName);
+	bool fileEsists = false;
 
 signals:
 	void LoadSkills();
