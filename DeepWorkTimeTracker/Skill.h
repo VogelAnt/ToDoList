@@ -20,6 +20,7 @@ public:
 	~Skill();
 	void AddNewSkill(QString newSkill, int newSkilltime);
 	void ComputeTime(int);
+	bool SkillListEmpty();
 	QStringList m_skillList;
 
 private:

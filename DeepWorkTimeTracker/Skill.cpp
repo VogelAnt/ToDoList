@@ -7,6 +7,14 @@ Skill::Skill(){
 	connect(this, &Skill::LoadSkills, m_fileManager, &FileMngr::on_LoadSkills);
 }
 
+bool Skill::SkillListEmpty() {
+	if (m_skillList.isEmpty) {
+		return false;
+	}
+	else{
+		return true;
+	}
+}
 
 void Skill::AddNewSkill(QString newSkill, int newSkilltime) {
 	m_skillTimemap->insert(newSkill, newSkilltime);
