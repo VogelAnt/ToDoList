@@ -56,11 +56,16 @@ MainMenu::~MainMenu(){
 
 void MainMenu::on_AddTimeClicked() {
 	if (m_skillManager->SkillListEmpty()) {
+		QMessageBox emptyListbox(QMessageBox::Information,
+			"No skills added currently, would you like to add some ?",
+			"Press Ok to add new skills", QMessageBox::Ok | QMessageBox::Abort, this);
 		// sth like yeah currently there are no Skills. Would you like to create some ?
 	}
-	QString skillName = QInputDialog::getItem(this, "Pick a skill to add time to", "Choose Skill", m_skillManager->m_skillList, 0, false);
-	int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + skillName, 0, 0, 1440, 1);
-	m_skillManager->AddNewSkill(skillName, skillTime);
+	else {
+		QString skillName = QInputDialog::getItem(this, "Pick a skill to add time to", "Choose Skill", m_skillManager->m_skillList, 0, false);
+		int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + skillName, 0, 0, 1440, 1);
+		m_skillManager->AddNewSkill(skillName, skillTime);
+	}
 }
 
 void MainMenu::on_SeeStatsClicked(){

@@ -39,6 +39,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
+#include <qmessagebox.h>
 #include <qaction.h>
 #include <qmenu.h>
 #include <qmenubar.h>
