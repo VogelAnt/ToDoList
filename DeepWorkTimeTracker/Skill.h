@@ -20,9 +20,9 @@ public:
 	~Skill();
 	void AddNewSkill(QString newSkill, int newSkilltime);
 	void ComputeTime(int);
+	QStringList m_skillList;
 
 private:
-	QStringList m_skillList;
 	QMap<QString, int> *m_skillTimemap = nullptr;
 	FileMngr *m_fileManager = nullptr;
 	QTimer *m_skillTimer = nullptr;

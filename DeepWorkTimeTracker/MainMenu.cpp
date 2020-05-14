@@ -55,10 +55,9 @@ MainMenu::~MainMenu(){
 }
 
 void MainMenu::on_AddTimeClicked() {
-
-	int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + newSkill, 0, 0, 1440, 1);
-	m_skillManager->AddNewSkill(newSkill, newSKilltime);
-
+	QString skillName = QInputDialog::getItem(this, "Pick a skill to add time to", "Choose Skill", m_skillManager->m_skillList, 0, false);
+	int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + skillName, 0, 0, 1440, 1);
+	m_skillManager->AddNewSkill(skillName, skillTime);
 }
 
 void MainMenu::on_SeeStatsClicked(){
