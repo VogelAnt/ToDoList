@@ -10,6 +10,7 @@ Skill::Skill(){
 
 void Skill::AddNewSkill(QString newSkill, int newSkilltime) {
 	m_skillTimemap->insert(newSkill, newSkilltime);
+	m_skillList.append(newSkill);
 }
 
 void Skill::ComputeTime(int) {

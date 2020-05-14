@@ -22,6 +22,7 @@ public:
 	void ComputeTime(int);
 
 private:
+	QStringList m_skillList;
 	QMap<QString, int> *m_skillTimemap = nullptr;
 	FileMngr *m_fileManager = nullptr;
 	QTimer *m_skillTimer = nullptr;
