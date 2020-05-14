@@ -8,7 +8,7 @@ Skill::Skill(){
 }
 
 bool Skill::SkillListEmpty() {
-	if (m_skillList.isEmpty) {
+	if (m_skillList.isEmpty()) {
 		return false;
 	}
 	else{
