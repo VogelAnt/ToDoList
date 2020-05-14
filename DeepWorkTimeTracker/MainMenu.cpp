@@ -55,10 +55,13 @@ MainMenu::~MainMenu(){
 }
 
 void MainMenu::on_AddTimeClicked() {
+	bool ok;
 	if (!m_skillManager->SkillListEmpty()) {
 		QMessageBox emptyListbox(QMessageBox::Information,
-			"No skills added currently, would you like to add some ?",
-			"Press Ok to add new skills", QMessageBox::Ok | QMessageBox::Abort, this);
+			"No skills found !",
+			"Press Ok to add new skills", 
+			QMessageBox::Ok | QMessageBox::Abort, 
+			this);
 		emptyListbox.exec();
 		std::cout << "Entered empty box" << std::endl;
 		// sth like yeah currently there are no Skills. Would you like to create some ?
