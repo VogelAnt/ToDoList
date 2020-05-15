@@ -19,7 +19,8 @@ public:
 	Skill(std::string name, int time);
 	~Skill();
 	void AddNewSkill(QString newSkill, int newSkilltime);
-	void ComputeTime(int);
+	void AddTime(QString skillName, int addedTime);
+	void ComputeTime(int timeTobecomputed);
 	bool SkillListEmpty();
 	QStringList m_skillList;
 

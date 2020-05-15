@@ -21,6 +21,10 @@ void Skill::AddNewSkill(QString newSkill, int newSkilltime) {
 	m_skillList.append(newSkill);
 }
 
+void Skill::AddTime(QString skillName, int addedTime) {
+
+}
+
 void Skill::ComputeTime(int) {
 
 }

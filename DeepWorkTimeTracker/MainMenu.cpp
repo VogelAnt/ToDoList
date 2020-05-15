@@ -60,7 +60,6 @@ MainMenu::~MainMenu(){
 }
 
 void MainMenu::on_AddTimeClicked() {
-	// make this a separate option
 	if (!m_skillManager->SkillListEmpty()) {
 		QMessageBox emptyListbox(QMessageBox::Information,
 			"No skills found !",
