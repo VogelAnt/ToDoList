@@ -10,6 +10,8 @@
 #include <QObject>
 #include <qstring.h>
 #include <string>
+#include <map>
+#include <iostream>
 
 class Skill : public QObject {
 	Q_OBJECT
@@ -23,9 +25,9 @@ public:
 	void ComputeTime(int timeTobecomputed);
 	bool SkillListEmpty();
 	QStringList m_skillList;
-
-private:
 	QMap<QString, int> *m_skillTimemap = nullptr;
+	std::map<std::string, int> *testMap = nullptr;
+private:
 	FileMngr *m_fileManager = nullptr;
 	QTimer *m_skillTimer = nullptr;
 signals:
