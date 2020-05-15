@@ -87,4 +87,7 @@ private:
 	StopWatch *m_stopWatch = nullptr;
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
+
+signals:
+	void AddNewSkills();
 };

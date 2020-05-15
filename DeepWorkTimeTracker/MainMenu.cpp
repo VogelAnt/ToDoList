@@ -5,6 +5,7 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	m_skillManager = new Skill();
 	InitializeMenuBar();
 	SetupMenu();
+	connect(this, &MainMenu::AddNewSkills, this, &MainMenu::on_AddSkillClicked);
 	connect(m_startTimerbutton, &QPushButton::clicked, this, &MainMenu::on_StartTimerClicked);
 	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
@@ -37,8 +38,6 @@ void MainMenu::on_StartTimerClicked() {
 }
 
 void MainMenu::on_AddSkillClicked() {
-	// remove this part
-	//m_skillInputdialog = new QInputDialog();
 	bool stringInputdialog_ok;
 	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill", QLineEdit::Normal, 0, &stringInputdialog_ok);
 	// Checking function in here ? 
@@ -61,14 +60,23 @@ MainMenu::~MainMenu(){
 }
 
 void MainMenu::on_AddTimeClicked() {
+	// make this a separate option
 	if (!m_skillManager->SkillListEmpty()) {
 		QMessageBox emptyListbox(QMessageBox::Information,
 			"No skills found !",
 			"Press Ok to add new skills", 
 			QMessageBox::Ok | QMessageBox::Abort, 
 			this);
-		emptyListbox.exec();
-		std::cout << "Entered empty box" << std::endl;
+		int messageBoxchoice = emptyListbox.exec();
+		switch (messageBoxchoice){
+		case QMessageBox::Ok:
+			emit AddNewSkills();
+			break;
+		case QMessageBox::Abort:
+			break;
+		default:
+			break;
+		}
 	}
 	else {
 		bool stringListinputdialog;
