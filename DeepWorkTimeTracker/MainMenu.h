@@ -32,7 +32,9 @@ There should be a website to which all of this shit is being uploaded (WT)
 The website should give you the possibility to
 
 Mission Critical Mode
-A Tim Ferris inspired To-Do-List in which you can define two (more possible but not recommended) tasks that are absolutely essential for the progress of your life mission.
+There are days when looming deadlines force us to focus on what is essential.
+
+Enjoy a Tim Ferris inspired To-Do-List in which you can define two (more possible but not recommended) tasks that are absolutely essential for the progress of your life mission.
 Each task can be outfitted with sub tasks that require completion before the big task can be crossed off.
 */
 #include <QtWidgets/QMainWindow>

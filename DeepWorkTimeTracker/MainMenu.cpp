@@ -39,10 +39,16 @@ void MainMenu::on_StartTimerClicked() {
 void MainMenu::on_AddSkillClicked() {
 	// remove this part
 	//m_skillInputdialog = new QInputDialog();
-	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill");
+	bool stringInputdialog_ok;
+	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill", QLineEdit::Normal, 0, &stringInputdialog_ok);
 	// Checking function in here ? 
-	int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + newSkill, 0, 0, 1440, 1);
-	m_skillManager->AddNewSkill(newSkill, newSKilltime);
+	if (stringInputdialog_ok) {
+		bool intInputdialog_ok;
+		int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + newSkill, 0, 0, 1440, 1, &intInputdialog_ok);
+		if (intInputdialog_ok) {
+			m_skillManager->AddNewSkill(newSkill, newSKilltime);
+		}
+	}
 }
 
 MainMenu::~MainMenu(){
@@ -55,7 +61,6 @@ MainMenu::~MainMenu(){
 }
 
 void MainMenu::on_AddTimeClicked() {
-	bool ok;
 	if (!m_skillManager->SkillListEmpty()) {
 		QMessageBox emptyListbox(QMessageBox::Information,
 			"No skills found !",
@@ -64,12 +69,17 @@ void MainMenu::on_AddTimeClicked() {
 			this);
 		emptyListbox.exec();
 		std::cout << "Entered empty box" << std::endl;
-		// sth like yeah currently there are no Skills. Would you like to create some ?
 	}
 	else {
-		QString skillName = QInputDialog::getItem(this, "Pick a skill to add time to", "Choose Skill", m_skillManager->m_skillList, 0, false);
-		int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + skillName, 0, 0, 1440, 1);
-		m_skillManager->AddNewSkill(skillName, skillTime);
+		bool stringListinputdialog;
+		QString skillName = QInputDialog::getItem(this, "Pick a skill to add time to", "Choose Skill", m_skillManager->m_skillList, 0, false, &stringListinputdialog);
+		if (stringListinputdialog) {
+			bool intInputdialog;
+			int skillTime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + skillName, 0, 0, 1440, 1, &intInputdialog);
+			if (intInputdialog) {
+				m_skillManager->AddNewSkill(skillName, skillTime);
+			}
+		}
 	}
 }
 
