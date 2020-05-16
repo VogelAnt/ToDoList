@@ -3,6 +3,8 @@
 MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
 	m_skillManager = new Skill();
+	skillTab = new QTabWidget(this);
+	skillTab->setHidden(true);
 	InitializeMenuBar();
 	SetupMenu();
 	connect(this, &MainMenu::AddNewSkills, this, &MainMenu::on_AddSkillClicked);
@@ -91,5 +93,8 @@ void MainMenu::on_AddTimeClicked() {
 }
 
 void MainMenu::on_SeeStatsClicked(){
+	// in here pop up for Tab
+	// per Skill 1 Tab
+
 }
 

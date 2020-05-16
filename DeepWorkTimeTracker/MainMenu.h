@@ -41,6 +41,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <QtWidgets/qpushbutton.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qwidget.h>
+#include <qtabwidget.h>
 #include <qmessagebox.h>
 #include <qaction.h>
 #include <qmenu.h>
@@ -87,7 +88,7 @@ private:
 	StopWatch *m_stopWatch = nullptr;
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
-
+	QTabWidget *skillTab = nullptr;
 signals:
 	void AddNewSkills();
 };
