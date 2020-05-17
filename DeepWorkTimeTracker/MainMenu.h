@@ -77,6 +77,7 @@ private:
 	void SetupMenu();
 	void InitializeMenuBar();
 	Ui::MainMenuClass ui;
+	bool m_statusDisplay = true;
 	Skill *m_skillManager = nullptr;
 	QInputDialog *m_skillInputdialog = nullptr;
 	QVBoxLayout *m_buttonLayout = nullptr;

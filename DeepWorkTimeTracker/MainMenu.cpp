@@ -31,7 +31,7 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
 	m_buttonLayout->addWidget(m_skillTab);
-	m_skillTab->setVisible(false);
+	m_skillTab->setVisible(m_statusDisplay);
 }
 
 void MainMenu::on_StartTimerClicked() {
@@ -94,8 +94,15 @@ void MainMenu::on_AddTimeClicked() {
 }
 
 void MainMenu::on_SeeStatsClicked(){
-	if (!m_skillManager->SkillListEmpty()) {
+	if (m_skillManager->SkillListEmpty()) {
 
 	}
-}
+	else{
 
+		m_skillTab->setVisible(!m_statusDisplay);
+
+		// set stats button
+		// display tab widget
+		// 
+	}
+}
