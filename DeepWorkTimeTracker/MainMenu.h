@@ -88,7 +88,7 @@ private:
 	StopWatch *m_stopWatch = nullptr;
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
-	QTabWidget *skillTab = nullptr;
+	QTabWidget *m_skillTab = nullptr;
 signals:
 	void AddNewSkills();
 };

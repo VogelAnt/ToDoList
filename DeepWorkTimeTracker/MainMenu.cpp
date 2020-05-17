@@ -3,8 +3,6 @@
 MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	ui.setupUi(this);
 	m_skillManager = new Skill();
-	skillTab = new QTabWidget(this);
-	skillTab->setHidden(true);
 	InitializeMenuBar();
 	SetupMenu();
 	connect(this, &MainMenu::AddNewSkills, this, &MainMenu::on_AddSkillClicked);
@@ -27,10 +25,13 @@ void MainMenu::SetupMenu() {
 	m_addTimebutton = new QPushButton("Add Time", m_centralWidget);
 	m_addSkillbutton = new QPushButton("Add Skill", m_centralWidget);
 	m_statsButton = new QPushButton("See Stats", m_centralWidget);
+	m_skillTab = new QTabWidget(m_centralWidget);
 	m_buttonLayout->addWidget(m_startTimerbutton);
 	m_buttonLayout->addWidget(m_addTimebutton);
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
+	m_buttonLayout->addWidget(m_skillTab);
+	m_skillTab->setVisible(false);
 }
 
 void MainMenu::on_StartTimerClicked() {
@@ -93,8 +94,8 @@ void MainMenu::on_AddTimeClicked() {
 }
 
 void MainMenu::on_SeeStatsClicked(){
-	// in here pop up for Tab
-	// per Skill 1 Tab
+	if (!m_skillManager->SkillListEmpty()) {
 
+	}
 }
 
