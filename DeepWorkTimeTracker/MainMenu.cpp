@@ -32,6 +32,7 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_statsButton);
 	m_buttonLayout->addWidget(m_skillTab);
 	m_skillTab->setVisible(m_statusDisplay);
+	m_statsButton->setVisible(false);
 }
 
 void MainMenu::on_StartTimerClicked() {
@@ -49,6 +50,7 @@ void MainMenu::on_AddSkillClicked() {
 		int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + newSkill, 0, 0, 1440, 1, &intInputdialog_ok);
 		if (intInputdialog_ok) {
 			m_skillManager->AddNewSkill(newSkill, newSKilltime);
+			m_statsButton->setVisible(true);
 		}
 	}
 }
@@ -98,11 +100,15 @@ void MainMenu::on_SeeStatsClicked(){
 
 	}
 	else{
-
-		m_skillTab->setVisible(!m_statusDisplay);
-
+		m_statusDisplay = !m_statusDisplay;
+		if (m_statusDisplay) {
+			m_statsButton->setText("Display Stats");
+		}
+		if (!m_statusDisplay) {
+			m_statsButton->setText("Hide Stats");
+		}
+		m_skillTab->setVisible(m_statusDisplay);
 		// set stats button
 		// display tab widget
-		// 
 	}
 }
