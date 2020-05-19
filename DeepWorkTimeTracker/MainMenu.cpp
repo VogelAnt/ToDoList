@@ -94,7 +94,7 @@ void MainMenu::on_AddTimeClicked() {
 }
 
 void MainMenu::on_SeeStatsClicked(){
-	if (m_skillManager->SkillListEmpty()) {
+	if (!m_skillManager->SkillListEmpty()) {
 
 	}
 	else{
