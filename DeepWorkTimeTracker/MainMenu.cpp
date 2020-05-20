@@ -44,8 +44,7 @@ void MainMenu::on_StartTimerClicked() {
 void MainMenu::on_AddSkillClicked() {
 	bool stringInputdialog_ok;
 	QString newSkill = QInputDialog::getText(this, "Skill Management", "Input the desired Skill", QLineEdit::Normal, 0, &stringInputdialog_ok);
-	// Checking function in here ? 
-	if (stringInputdialog_ok) {
+	if (stringInputdialog_ok && m_skillManager->NoDuplicateCheck(newSkill)) {
 		bool intInputdialog_ok;
 		int newSKilltime = QInputDialog::getInt(this, "Skill Management", "Input time in minutes for skill:" + newSkill, 0, 0, 1440, 1, &intInputdialog_ok);
 		if (intInputdialog_ok) {

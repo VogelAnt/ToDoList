@@ -23,6 +23,7 @@ public:
 	void AddNewSkill(QString newSkill, int newSkilltime);
 	void AddTime(QString skillName, int addedTime);
 	void ComputeTime(int timeTobecomputed);
+	bool NoDuplicateCheck(QString newSkill);
 	bool SkillListEmpty();
 	QStringList m_skillList;
 	QMap<QString, int> m_skillTimemap;

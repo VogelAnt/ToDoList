@@ -15,6 +15,15 @@ bool Skill::SkillListEmpty() {
 	}
 }
 
+bool Skill::NoDuplicateCheck(QString newSkill) {
+	if (m_skillTimemap.count(newSkill)>0){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+
 void Skill::AddNewSkill(QString newSkill, int newSkilltime) {
 	m_skillTimemap.insert(newSkill, newSkilltime);
 	m_skillList.append(newSkill);
