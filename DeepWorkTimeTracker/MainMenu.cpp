@@ -52,6 +52,14 @@ void MainMenu::on_AddSkillClicked() {
 			m_statsButton->setVisible(true);
 		}
 	}
+	else{
+		QMessageBox duplicateWarningbox(QMessageBox::Warning,
+			"Duplicate Skill!",
+			"You entered the name of an already existing skill. Please restart the process",
+			QMessageBox::Ok,
+			this);
+		duplicateWarningbox.exec();
+	}
 }
 
 MainMenu::~MainMenu(){
