@@ -25,7 +25,7 @@ public:
 	void ComputeTime(int timeTobecomputed);
 	bool SkillListEmpty();
 	QStringList m_skillList;
-	QMap<QString, int> *m_skillTimemap = nullptr;
+	QMap<QString, int> m_skillTimemap;
 	std::map<std::string, int> *testMap = nullptr;
 private:
 	FileMngr *m_fileManager = nullptr;
