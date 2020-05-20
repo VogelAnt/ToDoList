@@ -109,10 +109,10 @@ void MainMenu::on_SeeStatsClicked(){
 	else{
 		m_statusDisplay = !m_statusDisplay;
 		if (m_statusDisplay) {
-			m_statsButton->setText("Display Stats");
-		}
-		if (!m_statusDisplay) {
 			m_statsButton->setText("Hide Stats");
+		}
+		else {
+			m_statsButton->setText("See Stats");
 		}
 		m_skillTab->setVisible(m_statusDisplay);
 		// set stats button
