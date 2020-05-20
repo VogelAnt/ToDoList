@@ -92,5 +92,4 @@ private:
 	QTabWidget *m_skillTab = nullptr;
 signals:
 	void AddNewSkills();
-	void AddTime();
 };
