@@ -49,6 +49,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include <qstatusbar.h>
 #include "Skill.h"
 #include "StopWatch.h"
+#include "SkillStatisticsWidget.h"
 #include "ui_MainMenu.h"
 /*
 Menu on top where you can choose directory 

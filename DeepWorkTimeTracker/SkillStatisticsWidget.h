@@ -4,7 +4,7 @@
 #include <qmainwindow.h>
 #include <qwidget.h>
 
-class SkillStatisticsWidget : public QWidget
+class SkillStatisticsWidget : public QMainWindow
 {
 	Q_OBJECT
 
