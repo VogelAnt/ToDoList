@@ -32,10 +32,6 @@ void Skill::AddNewSkill(QString newSkill, int newSkilltime) {
 void Skill::AddTime(QString skillName, int addedTime) {
 	int oldTime = m_skillTimemap[skillName];
 	m_skillTimemap[skillName] = oldTime + addedTime;
-	//testMap->emplace(skillName.toStdString(), addedTime);
-	//std::cout << "integer value at" + skillName.toStdString()  << testMap->at(skillName.toStdString()) << std::endl;
-	//testMap->at(skillName.toStdString()) = testMap->at(skillName.toStdString()) + addedTime;
-	//std::cout << "new integer value is" << testMap->at(skillName.toStdString()) << std::endl;
 }
 
 void Skill::ComputeTime(int) {

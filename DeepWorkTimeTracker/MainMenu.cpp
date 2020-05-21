@@ -115,7 +115,5 @@ void MainMenu::on_SeeStatsClicked(){
 			m_statsButton->setText("See Stats");
 		}
 		m_skillTab->setVisible(m_statusDisplay);
-		// set stats button
-		// display tab widget
 	}
 }

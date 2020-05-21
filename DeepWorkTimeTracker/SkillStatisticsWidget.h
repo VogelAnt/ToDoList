@@ -1,8 +1,10 @@
 #pragma once
 #include <QtWidgets/qtabwidget.h>
 #include <QObject>
+#include <qmainwindow.h>
+#include <qwidget.h>
 
-class SkillStatisticsWidget : public QObject
+class SkillStatisticsWidget : public QWidget
 {
 	Q_OBJECT
 
