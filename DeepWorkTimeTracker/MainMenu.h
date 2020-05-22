@@ -91,6 +91,7 @@ private:
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
 	QTabWidget *m_skillTab = nullptr;
+	SkillStatisticsWidget *m_skillWidget = nullptr;
 signals:
 	void AddNewSkills();
 };
