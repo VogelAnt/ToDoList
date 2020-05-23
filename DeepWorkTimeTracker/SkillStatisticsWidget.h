@@ -9,6 +9,6 @@ class SkillStatisticsWidget : public QMainWindow
 	Q_OBJECT
 
 public:
-	SkillStatisticsWidget(QWidget *parent);
+	SkillStatisticsWidget(QString skillName, int skillTime, QWidget *parent);
 	~SkillStatisticsWidget();
 };

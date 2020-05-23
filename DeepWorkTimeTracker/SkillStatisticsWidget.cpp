@@ -1,6 +1,6 @@
 #include "SkillStatisticsWidget.h"
 
-SkillStatisticsWidget::SkillStatisticsWidget(QWidget *parent)
+SkillStatisticsWidget::SkillStatisticsWidget(QString skillName, int skillTime, QWidget *parent)
 	: QMainWindow(parent){
 
 }
