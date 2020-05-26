@@ -94,4 +94,5 @@ private:
 	SkillStatisticsWidget *m_skillWidget = nullptr;
 signals:
 	void AddNewSkills();
+	void TimeUpdated(QString skillName);
 };

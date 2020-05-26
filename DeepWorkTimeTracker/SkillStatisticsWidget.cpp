@@ -5,5 +5,9 @@ SkillStatisticsWidget::SkillStatisticsWidget(QString skillName, int skillTime, Q
 
 }
 
+void SkillStatisticsWidget::on_TimeUpdated(QString skillName) {
+	int newTime = Skill::m_skillTimemap[skillName];
+}
+
 SkillStatisticsWidget::~SkillStatisticsWidget(){
 }

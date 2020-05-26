@@ -51,8 +51,8 @@ void MainMenu::on_AddSkillClicked() {
 			m_skillManager->AddNewSkill(newSkill, newSKilltime);
 			m_statsButton->setVisible(true);
 			m_skillWidget = new SkillStatisticsWidget(newSkill, newSKilltime, m_skillTab);
+			connect(this, &MainMenu::TimeUpdated, m_skillWidget, &SkillStatisticsWidget::on_TimeUpdated);
 			m_skillTab->addTab(m_skillWidget, newSkill);
-			// create a new Skill tab
 		}
 	}
 	else{
