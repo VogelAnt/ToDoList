@@ -43,6 +43,12 @@
     <ClCompile Include="FileMngr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SkillStatisticsWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillTab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MainMenu.h">
@@ -58,6 +64,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FileMngr.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SkillStatisticsWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="SkillTab.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

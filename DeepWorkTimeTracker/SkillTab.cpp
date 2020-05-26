@@ -1,11 +1,13 @@
 #include "SkillTab.h"
 #include <qtabwidget.h>
-SkillTab::SkillTab(QObject *parent)
-	: QTabWidget(parent){
+SkillTab::SkillTab(QWidget *parent):QTabWidget(parent){
+	this->setTabPosition(West);
+	m_tabStyle = new HorizontalTabStyle();
+	tabBar()->setStyle(m_tabStyle);
 }
 
 
-QSize HorizontalTabStyle::sizefromContents(ContentsType eType, const QStyleOption *eOption, const QSize &eSize, const QWidget *eWidget) const {
+QSize HorizontalTabStyle::sizeFromContents(ContentsType eType, const QStyleOption *eOption, const QSize &eSize, const QWidget *eWidget) const {
 
 	return QProxyStyle::sizeFromContents(eType, eOption, eSize, eWidget).transposed();
 }
