@@ -25,7 +25,7 @@ void MainMenu::SetupMenu() {
 	m_addTimebutton = new QPushButton("Add Time", m_centralWidget);
 	m_addSkillbutton = new QPushButton("Add Skill", m_centralWidget);
 	m_statsButton = new QPushButton("See Stats", m_centralWidget);
-	m_skillTab = new QTabWidget(m_centralWidget);
+	m_skillTab = new SkillTab(m_centralWidget);
 	m_buttonLayout->addWidget(m_startTimerbutton);
 	m_buttonLayout->addWidget(m_addTimebutton);
 	m_buttonLayout->addWidget(m_addSkillbutton);
@@ -67,7 +67,6 @@ void MainMenu::on_AddSkillClicked() {
 
 MainMenu::~MainMenu(){
 	delete m_centralWidget;
-	delete m_skillInputdialog;
 	delete m_skillManager;
 	delete m_stopWatch;
 	delete m_option;

@@ -50,6 +50,7 @@ Each task can be outfitted with sub tasks that require completion before the big
 #include "Skill.h"
 #include "StopWatch.h"
 #include "SkillStatisticsWidget.h"
+#include "SkillTab.h"
 #include "ui_MainMenu.h"
 /*
 Menu on top where you can choose directory 
@@ -80,7 +81,8 @@ private:
 	Ui::MainMenuClass ui;
 	bool m_statusDisplay = false;
 	Skill *m_skillManager = nullptr;
-	QInputDialog *m_skillInputdialog = nullptr;
+	SkillStatisticsWidget *m_skillWidget = nullptr;
+	SkillTab *m_skillTab = nullptr;
 	QVBoxLayout *m_buttonLayout = nullptr;
 	QPushButton *m_startTimerbutton = nullptr;
 	QPushButton *m_addSkillbutton = nullptr;
@@ -90,8 +92,6 @@ private:
 	StopWatch *m_stopWatch = nullptr;
 	QMenu *m_optionsMenu = nullptr;
 	QAction *m_option = nullptr;
-	QTabWidget *m_skillTab = nullptr;
-	SkillStatisticsWidget *m_skillWidget = nullptr;
 signals:
 	void AddNewSkills();
 	void TimeUpdated(QString skillName);
