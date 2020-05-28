@@ -94,5 +94,6 @@ private:
 	QAction *m_option = nullptr;
 signals:
 	void AddNewSkills();
+	void AddSkillTab(QString skill, int skillTime);
 	void TimeUpdated(QString skillName);
 };

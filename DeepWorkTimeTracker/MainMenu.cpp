@@ -26,6 +26,7 @@ void MainMenu::SetupMenu() {
 	m_addSkillbutton = new QPushButton("Add Skill", m_centralWidget);
 	m_statsButton = new QPushButton("See Stats", m_centralWidget);
 	m_skillTab = new SkillTab(m_centralWidget);
+	connect(this, &MainMenu::AddSkillTab, m_skillTab, &SkillTab::on_AddSkillTab);
 	m_buttonLayout->addWidget(m_startTimerbutton);
 	m_buttonLayout->addWidget(m_addTimebutton);
 	m_buttonLayout->addWidget(m_addSkillbutton);
@@ -50,9 +51,11 @@ void MainMenu::on_AddSkillClicked() {
 		if (intInputdialog_ok) {
 			m_skillManager->AddNewSkill(newSkill, newSKilltime);
 			m_statsButton->setVisible(true);
-			m_skillWidget = new SkillStatisticsWidget(newSkill, newSKilltime, m_skillTab);
-			connect(this, &MainMenu::TimeUpdated, m_skillWidget, &SkillStatisticsWidget::on_TimeUpdated);
-			m_skillTab->addTab(m_skillWidget, newSkill);
+			emit AddSkillTab(newSkill, newSKilltime);
+			// Move this all inside the the TabWidget
+			//m_skillWidget = new SkillStatisticsWidget(newSkill, newSKilltime, m_skillTab);
+			//connect(this, &MainMenu::TimeUpdated, m_skillWidget, &SkillStatisticsWidget::on_TimeUpdated);
+			//m_skillTab->addTab(m_skillWidget, newSkill);
 		}
 	}
 	else{

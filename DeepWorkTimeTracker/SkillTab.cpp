@@ -25,5 +25,11 @@ void HorizontalTabStyle::drawControl(ControlElement element, const QStyleOption 
 	}
 	QProxyStyle::drawControl(element, option, painter, widget);
 }
+
+void SkillTab::on_AddSkillTab(QString skill, int skillTime) {
+	SkillStatisticsWidget *skillTabcontent = new SkillStatisticsWidget(skill, skillTime, this);
+	this->addTab(skillTabcontent, skill);
+}
+
 SkillTab::~SkillTab(){
 }

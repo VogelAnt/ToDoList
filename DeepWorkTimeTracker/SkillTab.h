@@ -7,6 +7,7 @@
 #include <qwidget.h>
 #include <qstyle.h>
 #include <qsize.h>
+#include "SkillStatisticsWidget.h"
 
 class HorizontalTabStyle : public QProxyStyle {
 public:
@@ -14,13 +15,14 @@ public:
 	void drawControl(ControlElement eElement, const QStyleOption *eOption, QPainter *ePainter, const QWidget *eWidget) const override;
 };
 
-class SkillTab : public QTabWidget
-{
+class SkillTab : public QTabWidget{
 	Q_OBJECT
 
 public:
 	SkillTab(QWidget *parent);
 	~SkillTab();
+public slots:
+	void on_AddSkillTab(QString skill, int skillTime);
 private:
 	HorizontalTabStyle *m_tabStyle = nullptr;
 };
