@@ -19,5 +19,5 @@ public slots:
 private:
 	QWidget *skillWidget = nullptr;
 	QVBoxLayout *m_verticalLayout = nullptr;
-	QPushButton *m_skillNamebutton = nullptr;
+	QLabel *m_skillNamelabel = nullptr;
 };

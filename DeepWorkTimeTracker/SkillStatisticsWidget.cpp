@@ -4,8 +4,8 @@ SkillStatisticsWidget::SkillStatisticsWidget(QString skillName, int skillTime, Q
 	: QMainWindow(parent) {
 	skillWidget = this->centralWidget();
 	m_verticalLayout = new QVBoxLayout(skillWidget);
-	m_skillNamebutton = new QPushButton(skillName + ": " + QString::number(skillTime), skillWidget);
-	m_verticalLayout->addWidget(m_skillNamebutton);
+	m_skillNamelabel = new QLabel(skillName + ": " + QString::number(skillTime), this);
+	m_verticalLayout->addWidget(m_skillNamelabel);
 }
 
 void SkillStatisticsWidget::on_TimeUpdated(QString skillName) {
