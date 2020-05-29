@@ -26,13 +26,17 @@ void MainMenu::SetupMenu() {
 	m_addSkillbutton = new QPushButton("Add Skill", m_centralWidget);
 	m_statsButton = new QPushButton("See Stats", m_centralWidget);
 	m_skillTab = new SkillTab(m_centralWidget);
+	QLabel *testLabel = new QLabel(m_centralWidget);
 	connect(this, &MainMenu::AddSkillTab, m_skillTab, &SkillTab::on_AddSkillTab);
+
 	m_buttonLayout->addWidget(m_startTimerbutton);
 	m_buttonLayout->addWidget(m_addTimebutton);
 	m_buttonLayout->addWidget(m_addSkillbutton);
 	m_buttonLayout->addWidget(m_statsButton);
 	m_buttonLayout->addWidget(m_skillTab);
 	m_skillTab->setVisible(m_statusDisplay);
+	m_buttonLayout->addWidget(testLabel);
+
 	m_statsButton->setVisible(false);
 }
 

@@ -2,10 +2,10 @@
 
 SkillStatisticsWidget::SkillStatisticsWidget(QString skillName, int skillTime, QWidget *parent)
 	: QMainWindow(parent){
-	m_centralWidget = this->centralWidget();
+	m_centralWidget = centralWidget();
 	m_verticalLayout = new QVBoxLayout(m_centralWidget);
 	QString labelString = skillName + ": " + QString::number(skillTime);
-	m_skillNametimelabel = new QLabel(labelString, m_centralWidget);
+	m_skillNametimelabel = new QLabel(labelString, this);
 	m_verticalLayout->addWidget(m_skillNametimelabel);
 }
 

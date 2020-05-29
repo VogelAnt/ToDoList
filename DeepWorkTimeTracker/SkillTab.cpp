@@ -27,9 +27,11 @@ void HorizontalTabStyle::drawControl(ControlElement element, const QStyleOption 
 }
 
 void SkillTab::on_AddSkillTab(QString skill, int skillTime) {
-	SkillStatisticsWidget *skillTabcontent = new SkillStatisticsWidget(skill, skillTime, this);
-	this->addTab(skillTabcontent, skill);
+	m_skillTabcontent = new SkillStatisticsWidget(skill, skillTime, this);
+	/* = new SkillStatisticsWidget(skill, skillTime, this);*/
+	this->addTab(m_skillTabcontent, skill);
 }
 
 SkillTab::~SkillTab(){
+	delete m_skillTabcontent;
 }

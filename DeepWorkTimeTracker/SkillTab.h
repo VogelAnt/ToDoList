@@ -24,5 +24,6 @@ public:
 public slots:
 	void on_AddSkillTab(QString skill, int skillTime);
 private:
+	SkillStatisticsWidget *m_skillTabcontent = nullptr;
 	HorizontalTabStyle *m_tabStyle = nullptr;
 };
