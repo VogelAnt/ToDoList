@@ -3,12 +3,12 @@
 #include <QObject>
 #include <qmainwindow.h>
 #include <qwidget.h>
+#include <qpushbutton.h>
 #include <qlayout.h>
 #include <qlabel.h>
 #include "Skill.h"
 
-class SkillStatisticsWidget : public QMainWindow
-{
+class SkillStatisticsWidget : public QMainWindow{
 	Q_OBJECT
 
 public:
@@ -17,7 +17,7 @@ public:
 public slots:
 	void on_TimeUpdated(QString skillName);
 private:
-	QWidget *m_centralWidget = nullptr;
+	QWidget *skillWidget = nullptr;
 	QVBoxLayout *m_verticalLayout = nullptr;
-	QLabel *m_skillNametimelabel = nullptr;
+	QPushButton *m_skillNamebutton = nullptr;
 };
