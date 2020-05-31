@@ -2,6 +2,8 @@
 
 #include <QObject>
 #include <qdir.h>
+#include <qfile.h>
+#include <qtextstream.h>
 #include <qstandardpaths.h>
 #include <iostream>
 
@@ -23,7 +25,7 @@ private:
 	void CheckFileExists();
 	void WriteFile(QString fileName);
 	void ReadFile(QString fileName);
-	bool fileEsists = false;
+	bool fileExists = false;
 
 signals:
 	void LoadSkills();

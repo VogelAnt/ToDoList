@@ -28,7 +28,7 @@ public:
 	QStringList m_skillList;
 	QMap<QString, int> m_skillTimemap;
 	std::map<std::string, int> *testMap = nullptr;
-
+	void ParseCSVFile();
 private:
 	FileMngr *m_fileManager = nullptr;
 	QTimer *m_skillTimer = nullptr;

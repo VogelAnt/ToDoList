@@ -38,6 +38,10 @@ void Skill::ComputeTime(int) {
 
 }
 
+void Skill::ParseCSVFile() {
+
+}
+
 Skill::~Skill(){
 	delete m_fileManager;
 	delete m_skillTimer;
