@@ -74,6 +74,7 @@ private slots:
 	void on_AddTimeClicked();
 	void on_AddSkillClicked();
 	void on_SeeStatsClicked();
+	void on_FileSetupTriggered();
 
 private:
 	void SetupMenu();

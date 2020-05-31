@@ -83,4 +83,15 @@
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DeepWorkTimeTracker.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkillFile.csv" />
+  </ItemGroup>
 </Project>

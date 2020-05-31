@@ -10,11 +10,12 @@ MainMenu::MainMenu(QWidget *parent): QMainWindow(parent){
 	connect(m_addSkillbutton, &QPushButton::clicked, this, &MainMenu::on_AddSkillClicked);
 	connect(m_addTimebutton, &QPushButton::clicked, this, &MainMenu::on_AddTimeClicked);
 	connect(m_statsButton, &QPushButton::clicked, this, &MainMenu::on_SeeStatsClicked);
+	connect(m_option, &QAction::triggered, this, &MainMenu::on_FileSetupTriggered);
 }
 
 void MainMenu::InitializeMenuBar() {
-	m_option = new QAction("&Test", this);
-	m_optionsMenu = menuBar()->addMenu("&TestMenu");
+	m_option = new QAction("&Files", this);
+	m_optionsMenu = menuBar()->addMenu("&Setup");
 	m_optionsMenu->addAction(m_option);
 }
 
@@ -33,6 +34,10 @@ void MainMenu::SetupMenu() {
 	m_buttonLayout->addWidget(m_statsButton);
 	m_buttonLayout->addWidget(m_skillTab);
 	m_skillTab->setVisible(m_statusDisplay);
+	m_startTimerbutton->setEnabled(false);
+	m_addTimebutton->setEnabled(false);
+	m_addSkillbutton->setEnabled(false);
+
 	m_statsButton->setVisible(false);
 }
 
@@ -106,6 +111,16 @@ void MainMenu::on_AddTimeClicked() {
 
 			}
 		}
+	}
+}
+
+void MainMenu::on_FileSetupTriggered() {
+	// if resource file is not empty, call parse csv function
+	if (0) {
+		//
+	}
+	else {
+
 	}
 }
 

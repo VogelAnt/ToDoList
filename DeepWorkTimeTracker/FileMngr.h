@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include <qdir.h>
+#include <qstandardpaths.h>
 #include <iostream>
 
 class FileMngr : public QObject{
