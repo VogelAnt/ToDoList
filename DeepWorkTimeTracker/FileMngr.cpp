@@ -1,6 +1,7 @@
 #include "FileMngr.h"
 
 FileMngr::FileMngr() {
+	// Sync button
 	// first time start up ask for a directory
 	// after adding new skill pick a new directory
 	// there should be a boolean variable "directory set ..." etc
