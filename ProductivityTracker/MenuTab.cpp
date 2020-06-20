@@ -1,6 +1,5 @@
 #include "MenuTab.h"
 
-MenuTab::MenuTab(QObject *parent) : QObject(parent)
-{
+MenuTab::MenuTab(QWidget *parent) : QTabWidget(parent){
 
 }
