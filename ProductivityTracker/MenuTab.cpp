@@ -25,21 +25,21 @@ MenuTab::MenuTab(QWidget *parent) : QTabWidget(parent){
     tabBar()->setStyle(m_tabStyle);
     m_timerWidget = new TimerWidget(this);
     m_activityWidget = new ActivityWidget(this);
-    m_skillWidget = new SkillWidget(this);
+    m_skillOverviewwidget = new SkillOverviewWidget(this);
     m_categoryWidget = new CategoryWidget(this);
 }
 
 void MenuTab::on_InitializeTab(){
     addTab(m_timerWidget, "Timer");
     addTab(m_activityWidget, "Activity");
-    addTab(m_skillWidget, "Skills");
+    addTab(m_skillOverviewwidget, "Skills");
     addTab(m_categoryWidget, "Categotries");
 }
 
 MenuTab::~MenuTab(){
     delete m_timerWidget;
     delete m_activityWidget;
-    delete m_skillWidget;
     delete m_categoryWidget;
+    delete m_skillOverviewwidget;
     delete m_tabStyle;
 }

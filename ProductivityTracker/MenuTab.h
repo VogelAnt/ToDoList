@@ -3,7 +3,7 @@
 
 #include "TimerWidget.h"
 #include "ActivityWidget.h"
-#include "SkillWidget.h"
+#include "SkillOverviewWidget.h"
 #include "CategoryWidget.h"
 
 #include <QProxyStyle>
@@ -31,7 +31,7 @@ public slots:
 private:
     TimerWidget *m_timerWidget = nullptr;
     ActivityWidget *m_activityWidget = nullptr;
-    SkillWidget *m_skillWidget = nullptr;
+    SkillOverviewWidget *m_skillOverviewwidget = nullptr;
     CategoryWidget *m_categoryWidget = nullptr;
     HorizontalTabStyle *m_tabStyle = nullptr;
 signals:
