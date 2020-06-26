@@ -16,13 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ActivityWidget.cpp \
+    CategoryWidget.cpp \
     MenuTab.cpp \
+    SkillOverviewWidget.cpp \
+    SkillWidget.cpp \
+    TimerWidget.cpp \
     main.cpp \
     MainMenu.cpp
 
 HEADERS += \
+    ActivityWidget.h \
+    CategoryWidget.h \
     MainMenu.h \
-    MenuTab.h
+    MenuTab.h \
+    SkillOverviewWidget.h \
+    SkillWidget.h \
+    TimerWidget.h
 
 FORMS += \
     MainMenu.ui

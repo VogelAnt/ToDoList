@@ -4,6 +4,8 @@
 MainMenu::MainMenu(QWidget *parent): QMainWindow(parent), ui(new Ui::MainMenu){
     ui->setupUi(this);
     SetupMenu();
+    connect(this, &MainMenu::InitializeTab, m_menuTab, &MenuTab::on_InitializeTab);
+    InitializeTab();
 }
 
 void MainMenu::SetupMenu(){
@@ -11,11 +13,6 @@ void MainMenu::SetupMenu(){
     m_menuLayout = new QVBoxLayout(m_centralWidget);
     m_menuTab = new MenuTab(m_centralWidget);
     m_menuLayout->addWidget(m_menuTab);
-}
-
-void MainMenu::SetupMenuTab(){
-//    m_menuTab->addTab("Timer");
-
 }
 
 MainMenu::~MainMenu(){

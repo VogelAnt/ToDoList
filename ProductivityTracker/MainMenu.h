@@ -14,9 +14,11 @@ public:
     MainMenu(QWidget *parent = nullptr);
     ~MainMenu();
 
+signals:
+void InitializeTab();
+
 private:
     void SetupMenu();
-    void SetupMenuTab();
     Ui::MainMenu *ui;
     QVBoxLayout *m_menuLayout = nullptr;
     QWidget *m_centralWidget = nullptr;
