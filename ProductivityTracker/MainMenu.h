@@ -19,6 +19,7 @@ void InitializeTab();
 
 private:
     void SetupMenu();
+    void SetupTaskBar();
     Ui::MainMenu *ui;
     QVBoxLayout *m_menuLayout = nullptr;
     QWidget *m_centralWidget = nullptr;

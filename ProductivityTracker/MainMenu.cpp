@@ -15,6 +15,10 @@ void MainMenu::SetupMenu(){
     m_menuLayout->addWidget(m_menuTab);
 }
 
+void MainMenu::SetupTaskBar(){
+
+}
+
 MainMenu::~MainMenu(){
     delete ui;
     delete m_centralWidget;
