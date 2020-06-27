@@ -1,7 +1,11 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 #include "MenuTab.h"
+
 #include <QMainWindow>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
 #include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
@@ -24,5 +28,7 @@ private:
     QVBoxLayout *m_menuLayout = nullptr;
     QWidget *m_centralWidget = nullptr;
     MenuTab *m_menuTab = nullptr;
+    QMenu *m_optionsMenu = nullptr;
+    QAction *m_menuAction = nullptr;
 };
 #endif // MAINMENU_H

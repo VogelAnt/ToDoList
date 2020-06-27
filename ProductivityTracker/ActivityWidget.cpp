@@ -1,6 +1,5 @@
 #include "ActivityWidget.h"
 
-ActivityWidget::ActivityWidget(QWidget *parent) : QMainWindow(parent)
-{
+ActivityWidget::ActivityWidget(QWidget *parent) : QMainWindow(parent){
 
 }

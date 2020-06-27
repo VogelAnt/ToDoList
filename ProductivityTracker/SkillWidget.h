@@ -1,18 +1,22 @@
 #ifndef SKILLWIDGET_H
 #define SKILLWIDGET_H
 
-#include <QMainWindow>
-#include <QObject>
 #include <QWidget>
 
-class SkillWidget : public QMainWindow
+namespace Ui {
+class SkillWidget;
+}
+
+class SkillWidget : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit SkillWidget(QWidget *parent = nullptr);
+    ~SkillWidget();
 
-signals:
-
+private:
+    Ui::SkillWidget *ui;
 };
 
 #endif // SKILLWIDGET_H

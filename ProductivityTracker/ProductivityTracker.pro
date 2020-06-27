@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     ActivityWidget.cpp \
-    CategoryWidget.cpp \
     FileManager.cpp \
     MenuTab.cpp \
     SQLClient.cpp \
@@ -29,7 +28,6 @@ SOURCES += \
 
 HEADERS += \
     ActivityWidget.h \
-    CategoryWidget.h \
     FileManager.h \
     MainMenu.h \
     MenuTab.h \
@@ -39,7 +37,8 @@ HEADERS += \
     TimerWidget.h
 
 FORMS += \
-    MainMenu.ui
+    MainMenu.ui \
+    SkillWidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

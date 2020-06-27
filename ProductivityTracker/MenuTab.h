@@ -4,7 +4,6 @@
 #include "TimerWidget.h"
 #include "ActivityWidget.h"
 #include "SkillOverviewWidget.h"
-#include "CategoryWidget.h"
 
 #include <QProxyStyle>
 #include <QStyle>
@@ -32,7 +31,6 @@ private:
     TimerWidget *m_timerWidget = nullptr;
     ActivityWidget *m_activityWidget = nullptr;
     SkillOverviewWidget *m_skillOverviewwidget = nullptr;
-    CategoryWidget *m_categoryWidget = nullptr;
     HorizontalTabStyle *m_tabStyle = nullptr;
 signals:
 };

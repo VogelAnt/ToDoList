@@ -4,6 +4,7 @@
 MainMenu::MainMenu(QWidget *parent): QMainWindow(parent), ui(new Ui::MainMenu){
     ui->setupUi(this);
     SetupMenu();
+    SetupTaskBar();
     connect(this, &MainMenu::InitializeTab, m_menuTab, &MenuTab::on_InitializeTab);
     InitializeTab();
 }
@@ -16,11 +17,15 @@ void MainMenu::SetupMenu(){
 }
 
 void MainMenu::SetupTaskBar(){
-
+    m_menuAction = new QAction("&Stuff etc", this);
+    m_optionsMenu = menuBar()->addMenu("&Help");
+    m_optionsMenu->addAction(m_menuAction);
 }
 
 MainMenu::~MainMenu(){
     delete ui;
     delete m_centralWidget;
+    delete m_menuAction;
+    delete m_optionsMenu;
 }
 
