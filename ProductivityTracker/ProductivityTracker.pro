@@ -18,7 +18,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     ActivityWidget.cpp \
     CategoryWidget.cpp \
+    FileManager.cpp \
     MenuTab.cpp \
+    SQLClient.cpp \
     SkillOverviewWidget.cpp \
     SkillWidget.cpp \
     TimerWidget.cpp \
@@ -28,8 +30,10 @@ SOURCES += \
 HEADERS += \
     ActivityWidget.h \
     CategoryWidget.h \
+    FileManager.h \
     MainMenu.h \
     MenuTab.h \
+    SQLClient.h \
     SkillOverviewWidget.h \
     SkillWidget.h \
     TimerWidget.h
