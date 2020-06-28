@@ -29,6 +29,6 @@ private:
     QWidget *m_centralWidget = nullptr;
     MenuTab *m_menuTab = nullptr;
     QMenu *m_optionsMenu = nullptr;
-    QAction *m_menuAction = nullptr;
+    QAction *m_viewAction = nullptr;
 };
 #endif // MAINMENU_H

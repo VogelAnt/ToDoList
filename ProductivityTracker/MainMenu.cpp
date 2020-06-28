@@ -17,15 +17,15 @@ void MainMenu::SetupMenu(){
 }
 
 void MainMenu::SetupTaskBar(){
-    m_menuAction = new QAction("&Stuff etc", this);
+    m_viewAction = new QAction("&Change view", this);
     m_optionsMenu = menuBar()->addMenu("&Help");
-    m_optionsMenu->addAction(m_menuAction);
+    m_optionsMenu = menuBar()->addMenu("&View");
+    m_optionsMenu->addAction(m_viewAction);
 }
 
 MainMenu::~MainMenu(){
     delete ui;
     delete m_centralWidget;
-    delete m_menuAction;
+    delete m_viewAction;
     delete m_optionsMenu;
 }
-
