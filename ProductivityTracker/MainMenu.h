@@ -30,5 +30,6 @@ private:
     MenuTab *m_menuTab = nullptr;
     QMenu *m_optionsMenu = nullptr;
     QAction *m_viewAction = nullptr;
+    QAction *m_dataAction = nullptr;
 };
 #endif // MAINMENU_H

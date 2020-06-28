@@ -18,9 +18,12 @@ void MainMenu::SetupMenu(){
 
 void MainMenu::SetupTaskBar(){
     m_viewAction = new QAction("&Change view", this);
+    m_dataAction = new QAction("&DataSync", this);
     m_optionsMenu = menuBar()->addMenu("&Help");
     m_optionsMenu = menuBar()->addMenu("&View");
     m_optionsMenu->addAction(m_viewAction);
+    m_optionsMenu = menuBar()->addMenu("Data");
+    m_optionsMenu->addAction(m_dataAction);
 }
 
 MainMenu::~MainMenu(){
