@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QGridLayout>
 #include <QString>
 #include <QPainter>
 
@@ -20,8 +21,7 @@ public:
 
 private:    
     Ui::SkillWidget *ui;
-    QVBoxLayout *m_verticalLayout = nullptr;
-    QHBoxLayout *m_horizontalLayout = nullptr;
+    QGridLayout *m_grid = nullptr;
     QLabel *m_skillNamelabel = nullptr;
     QLabel *m_skillTimelabel = nullptr;
 };
