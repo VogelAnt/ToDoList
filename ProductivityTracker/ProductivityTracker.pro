@@ -20,7 +20,7 @@ SOURCES += \
     FileManager.cpp \
     MenuTab.cpp \
     SQLClient.cpp \
-    SkillOverviewWidget.cpp \
+    SkillManagementWidget.cpp \
     SkillWidget.cpp \
     TimerWidget.cpp \
     main.cpp \
@@ -32,12 +32,13 @@ HEADERS += \
     MainMenu.h \
     MenuTab.h \
     SQLClient.h \
-    SkillOverviewWidget.h \
+    SkillManagementWidget.h \
     SkillWidget.h \
     TimerWidget.h
 
 FORMS += \
     MainMenu.ui \
+    SkillManagementWidget.ui \
     SkillWidget.ui
 
 # Default rules for deployment.

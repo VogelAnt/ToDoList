@@ -56,7 +56,7 @@ SOURCES       = ../ProductivityTracker/ActivityWidget.cpp \
 		../ProductivityTracker/FileManager.cpp \
 		../ProductivityTracker/MenuTab.cpp \
 		../ProductivityTracker/SQLClient.cpp \
-		../ProductivityTracker/SkillOverviewWidget.cpp \
+		../ProductivityTracker/SkillManagementWidget.cpp \
 		../ProductivityTracker/SkillWidget.cpp \
 		../ProductivityTracker/TimerWidget.cpp \
 		../ProductivityTracker/main.cpp \
@@ -65,14 +65,14 @@ SOURCES       = ../ProductivityTracker/ActivityWidget.cpp \
 		moc_MainMenu.cpp \
 		moc_MenuTab.cpp \
 		moc_SQLClient.cpp \
-		moc_SkillOverviewWidget.cpp \
+		moc_SkillManagementWidget.cpp \
 		moc_SkillWidget.cpp \
 		moc_TimerWidget.cpp
 OBJECTS       = ActivityWidget.o \
 		FileManager.o \
 		MenuTab.o \
 		SQLClient.o \
-		SkillOverviewWidget.o \
+		SkillManagementWidget.o \
 		SkillWidget.o \
 		TimerWidget.o \
 		main.o \
@@ -82,7 +82,7 @@ OBJECTS       = ActivityWidget.o \
 		moc_MainMenu.o \
 		moc_MenuTab.o \
 		moc_SQLClient.o \
-		moc_SkillOverviewWidget.o \
+		moc_SkillManagementWidget.o \
 		moc_SkillWidget.o \
 		moc_TimerWidget.o
 DIST          = ../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_pre.prf \
@@ -250,6 +250,7 @@ DIST          = ../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_post.prf \
+		../ProductivityTracker/.qmake.stash \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -275,13 +276,13 @@ DIST          = ../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../ProductivityTracker/MainMenu.h \
 		../ProductivityTracker/MenuTab.h \
 		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
+		../ProductivityTracker/SkillManagementWidget.h \
 		../ProductivityTracker/SkillWidget.h \
 		../ProductivityTracker/TimerWidget.h ../ProductivityTracker/ActivityWidget.cpp \
 		../ProductivityTracker/FileManager.cpp \
 		../ProductivityTracker/MenuTab.cpp \
 		../ProductivityTracker/SQLClient.cpp \
-		../ProductivityTracker/SkillOverviewWidget.cpp \
+		../ProductivityTracker/SkillManagementWidget.cpp \
 		../ProductivityTracker/SkillWidget.cpp \
 		../ProductivityTracker/TimerWidget.cpp \
 		../ProductivityTracker/main.cpp \
@@ -294,7 +295,7 @@ TARGET        = ProductivityTracker
 first: all
 ####### Build rules
 
-ProductivityTracker: ui_MainMenu.h ui_SkillWidget.h $(OBJECTS)  
+ProductivityTracker: ui_MainMenu.h ui_SkillManagementWidget.h ui_SkillWidget.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../ProductivityTracker/ProductivityTracker.pro ../../../Qt/5.15.0/gcc_64/mkspecs/linux-g++/qmake.conf ../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_pre.prf \
@@ -462,6 +463,7 @@ Makefile: ../ProductivityTracker/ProductivityTracker.pro ../../../Qt/5.15.0/gcc_
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/qt_config.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/toolchain.prf \
 		../../../Qt/5.15.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -649,6 +651,7 @@ Makefile: ../ProductivityTracker/ProductivityTracker.pro ../../../Qt/5.15.0/gcc_
 ../../../Qt/5.15.0/gcc_64/mkspecs/features/qt_config.prf:
 ../../../Qt/5.15.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../Qt/5.15.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/5.15.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/5.15.0/gcc_64/mkspecs/features/toolchain.prf:
 ../../../Qt/5.15.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -685,9 +688,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.15.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProductivityTracker/ActivityWidget.h ../ProductivityTracker/FileManager.h ../ProductivityTracker/MainMenu.h ../ProductivityTracker/MenuTab.h ../ProductivityTracker/SQLClient.h ../ProductivityTracker/SkillOverviewWidget.h ../ProductivityTracker/SkillWidget.h ../ProductivityTracker/TimerWidget.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProductivityTracker/ActivityWidget.cpp ../ProductivityTracker/FileManager.cpp ../ProductivityTracker/MenuTab.cpp ../ProductivityTracker/SQLClient.cpp ../ProductivityTracker/SkillOverviewWidget.cpp ../ProductivityTracker/SkillWidget.cpp ../ProductivityTracker/TimerWidget.cpp ../ProductivityTracker/main.cpp ../ProductivityTracker/MainMenu.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../ProductivityTracker/MainMenu.ui ../ProductivityTracker/SkillWidget.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProductivityTracker/ActivityWidget.h ../ProductivityTracker/FileManager.h ../ProductivityTracker/MainMenu.h ../ProductivityTracker/MenuTab.h ../ProductivityTracker/SQLClient.h ../ProductivityTracker/SkillManagementWidget.h ../ProductivityTracker/SkillWidget.h ../ProductivityTracker/TimerWidget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProductivityTracker/ActivityWidget.cpp ../ProductivityTracker/FileManager.cpp ../ProductivityTracker/MenuTab.cpp ../ProductivityTracker/SQLClient.cpp ../ProductivityTracker/SkillManagementWidget.cpp ../ProductivityTracker/SkillWidget.cpp ../ProductivityTracker/TimerWidget.cpp ../ProductivityTracker/main.cpp ../ProductivityTracker/MainMenu.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../ProductivityTracker/MainMenu.ui ../ProductivityTracker/SkillManagementWidget.ui ../ProductivityTracker/SkillWidget.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -719,9 +722,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.15.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h ../../../Qt/5.15.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_ActivityWidget.cpp moc_FileManager.cpp moc_MainMenu.cpp moc_MenuTab.cpp moc_SQLClient.cpp moc_SkillOverviewWidget.cpp moc_SkillWidget.cpp moc_TimerWidget.cpp
+compiler_moc_header_make_all: moc_ActivityWidget.cpp moc_FileManager.cpp moc_MainMenu.cpp moc_MenuTab.cpp moc_SQLClient.cpp moc_SkillManagementWidget.cpp moc_SkillWidget.cpp moc_TimerWidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_ActivityWidget.cpp moc_FileManager.cpp moc_MainMenu.cpp moc_MenuTab.cpp moc_SQLClient.cpp moc_SkillOverviewWidget.cpp moc_SkillWidget.cpp moc_TimerWidget.cpp
+	-$(DEL_FILE) moc_ActivityWidget.cpp moc_FileManager.cpp moc_MainMenu.cpp moc_MenuTab.cpp moc_SQLClient.cpp moc_SkillManagementWidget.cpp moc_SkillWidget.cpp moc_TimerWidget.cpp
 moc_ActivityWidget.cpp: ../ProductivityTracker/ActivityWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1005,27 +1008,6 @@ moc_MainMenu.cpp: ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../ProductivityTracker/ActivityWidget.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
-		../ProductivityTracker/SkillWidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/FileManager.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QProxyStyle \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qproxystyle.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QCommonStyle \
@@ -1041,6 +1023,7 @@ moc_MainMenu.cpp: ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QTabWidget \
@@ -1051,6 +1034,11 @@ moc_MainMenu.cpp: ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		moc_predefs.h \
 		../../../Qt/5.15.0/gcc_64/bin/moc
 	/home/tony/Qt/5.15.0/gcc_64/bin/moc $(DEFINES) --include /home/tony/Documents/ToDoList/build-ProductivityTracker-Desktop_Qt_5_15_0_GCC_64bit-Debug/moc_predefs.h -I/home/tony/Qt/5.15.0/gcc_64/mkspecs/linux-g++ -I/home/tony/Documents/ToDoList/ProductivityTracker -I/home/tony/Qt/5.15.0/gcc_64/include -I/home/tony/Qt/5.15.0/gcc_64/include/QtWidgets -I/home/tony/Qt/5.15.0/gcc_64/include/QtGui -I/home/tony/Qt/5.15.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ProductivityTracker/MainMenu.h -o moc_MainMenu.cpp
@@ -1166,27 +1154,6 @@ moc_MenuTab.cpp: ../ProductivityTracker/MenuTab.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../ProductivityTracker/ActivityWidget.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
-		../ProductivityTracker/SkillWidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/FileManager.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QProxyStyle \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qproxystyle.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QCommonStyle \
@@ -1202,6 +1169,7 @@ moc_MenuTab.cpp: ../ProductivityTracker/MenuTab.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QTabWidget \
@@ -1267,7 +1235,7 @@ moc_SQLClient.cpp: ../ProductivityTracker/SQLClient.h \
 		../../../Qt/5.15.0/gcc_64/bin/moc
 	/home/tony/Qt/5.15.0/gcc_64/bin/moc $(DEFINES) --include /home/tony/Documents/ToDoList/build-ProductivityTracker-Desktop_Qt_5_15_0_GCC_64bit-Debug/moc_predefs.h -I/home/tony/Qt/5.15.0/gcc_64/mkspecs/linux-g++ -I/home/tony/Documents/ToDoList/ProductivityTracker -I/home/tony/Qt/5.15.0/gcc_64/include -I/home/tony/Qt/5.15.0/gcc_64/include/QtWidgets -I/home/tony/Qt/5.15.0/gcc_64/include/QtGui -I/home/tony/Qt/5.15.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ProductivityTracker/SQLClient.h -o moc_SQLClient.cpp
 
-moc_SkillOverviewWidget.cpp: ../ProductivityTracker/SkillOverviewWidget.h \
+moc_SkillManagementWidget.cpp: ../ProductivityTracker/SkillManagementWidget.h \
 		../ProductivityTracker/SkillWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qwidget.h \
@@ -1381,6 +1349,7 @@ moc_SkillOverviewWidget.cpp: ../ProductivityTracker/SkillOverviewWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QGridLayout \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
@@ -1398,7 +1367,7 @@ moc_SkillOverviewWidget.cpp: ../ProductivityTracker/SkillOverviewWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		moc_predefs.h \
 		../../../Qt/5.15.0/gcc_64/bin/moc
-	/home/tony/Qt/5.15.0/gcc_64/bin/moc $(DEFINES) --include /home/tony/Documents/ToDoList/build-ProductivityTracker-Desktop_Qt_5_15_0_GCC_64bit-Debug/moc_predefs.h -I/home/tony/Qt/5.15.0/gcc_64/mkspecs/linux-g++ -I/home/tony/Documents/ToDoList/ProductivityTracker -I/home/tony/Qt/5.15.0/gcc_64/include -I/home/tony/Qt/5.15.0/gcc_64/include/QtWidgets -I/home/tony/Qt/5.15.0/gcc_64/include/QtGui -I/home/tony/Qt/5.15.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ProductivityTracker/SkillOverviewWidget.h -o moc_SkillOverviewWidget.cpp
+	/home/tony/Qt/5.15.0/gcc_64/bin/moc $(DEFINES) --include /home/tony/Documents/ToDoList/build-ProductivityTracker-Desktop_Qt_5_15_0_GCC_64bit-Debug/moc_predefs.h -I/home/tony/Qt/5.15.0/gcc_64/mkspecs/linux-g++ -I/home/tony/Documents/ToDoList/ProductivityTracker -I/home/tony/Qt/5.15.0/gcc_64/include -I/home/tony/Qt/5.15.0/gcc_64/include/QtWidgets -I/home/tony/Qt/5.15.0/gcc_64/include/QtGui -I/home/tony/Qt/5.15.0/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ProductivityTracker/SkillManagementWidget.h -o moc_SkillManagementWidget.cpp
 
 moc_SkillWidget.cpp: ../ProductivityTracker/SkillWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
@@ -1513,6 +1482,7 @@ moc_SkillWidget.cpp: ../ProductivityTracker/SkillWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QGridLayout \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
@@ -1639,12 +1609,16 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_MainMenu.h ui_SkillWidget.h
+compiler_uic_make_all: ui_MainMenu.h ui_SkillManagementWidget.h ui_SkillWidget.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_MainMenu.h ui_SkillWidget.h
+	-$(DEL_FILE) ui_MainMenu.h ui_SkillManagementWidget.h ui_SkillWidget.h
 ui_MainMenu.h: ../ProductivityTracker/MainMenu.ui \
 		../../../Qt/5.15.0/gcc_64/bin/uic
 	/home/tony/Qt/5.15.0/gcc_64/bin/uic ../ProductivityTracker/MainMenu.ui -o ui_MainMenu.h
+
+ui_SkillManagementWidget.h: ../ProductivityTracker/SkillManagementWidget.ui \
+		../../../Qt/5.15.0/gcc_64/bin/uic
+	/home/tony/Qt/5.15.0/gcc_64/bin/uic ../ProductivityTracker/SkillManagementWidget.ui -o ui_SkillManagementWidget.h
 
 ui_SkillWidget.h: ../ProductivityTracker/SkillWidget.ui \
 		../../../Qt/5.15.0/gcc_64/bin/uic
@@ -1938,27 +1912,6 @@ MenuTab.o: ../ProductivityTracker/MenuTab.cpp ../ProductivityTracker/MenuTab.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../ProductivityTracker/ActivityWidget.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
-		../ProductivityTracker/SkillWidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/FileManager.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QProxyStyle \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qproxystyle.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QCommonStyle \
@@ -1974,6 +1927,7 @@ MenuTab.o: ../ProductivityTracker/MenuTab.cpp ../ProductivityTracker/MenuTab.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QTabWidget
@@ -2035,7 +1989,7 @@ SQLClient.o: ../ProductivityTracker/SQLClient.cpp ../ProductivityTracker/SQLClie
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qobject_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SQLClient.o ../ProductivityTracker/SQLClient.cpp
 
-SkillOverviewWidget.o: ../ProductivityTracker/SkillOverviewWidget.cpp ../ProductivityTracker/SkillOverviewWidget.h \
+SkillManagementWidget.o: ../ProductivityTracker/SkillManagementWidget.cpp ../ProductivityTracker/SkillManagementWidget.h \
 		../ProductivityTracker/SkillWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qwidget.h \
@@ -2149,6 +2103,7 @@ SkillOverviewWidget.o: ../ProductivityTracker/SkillOverviewWidget.cpp ../Product
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QGridLayout \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
@@ -2164,8 +2119,8 @@ SkillOverviewWidget.o: ../ProductivityTracker/SkillOverviewWidget.cpp ../Product
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabwidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QDebug
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SkillOverviewWidget.o ../ProductivityTracker/SkillOverviewWidget.cpp
+		ui_SkillManagementWidget.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SkillManagementWidget.o ../ProductivityTracker/SkillManagementWidget.cpp
 
 SkillWidget.o: ../ProductivityTracker/SkillWidget.cpp ../ProductivityTracker/SkillWidget.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
@@ -2280,12 +2235,25 @@ SkillWidget.o: ../ProductivityTracker/SkillWidget.cpp ../ProductivityTracker/Ski
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QGridLayout \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
 		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		ui_SkillWidget.h
+		ui_SkillWidget.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.0/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.15.0/gcc_64/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o SkillWidget.o ../ProductivityTracker/SkillWidget.cpp
 
 TimerWidget.o: ../ProductivityTracker/TimerWidget.cpp ../ProductivityTracker/TimerWidget.h \
@@ -2511,27 +2479,6 @@ main.o: ../ProductivityTracker/main.cpp ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../ProductivityTracker/ActivityWidget.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
-		../ProductivityTracker/SkillWidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/FileManager.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QProxyStyle \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qproxystyle.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QCommonStyle \
@@ -2547,6 +2494,7 @@ main.o: ../ProductivityTracker/main.cpp ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QTabWidget \
@@ -2557,6 +2505,11 @@ main.o: ../ProductivityTracker/main.cpp ../ProductivityTracker/MainMenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qcoreapplication.h \
@@ -2678,27 +2631,6 @@ MainMenu.o: ../ProductivityTracker/MainMenu.cpp ../ProductivityTracker/MainMenu.
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QWidget \
 		../ProductivityTracker/ActivityWidget.h \
-		../ProductivityTracker/SkillOverviewWidget.h \
-		../ProductivityTracker/SkillWidget.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QLabel \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlabel.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../../Qt/5.15.0/gcc_64/include/QtCore/QString \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/QPainter \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpainter.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.15.0/gcc_64/include/QtGui/qpen.h \
-		../ProductivityTracker/SQLClient.h \
-		../ProductivityTracker/FileManager.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QPushButton \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QProxyStyle \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qproxystyle.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QCommonStyle \
@@ -2714,6 +2646,7 @@ MainMenu.o: ../ProductivityTracker/MainMenu.cpp ../ProductivityTracker/MainMenu.
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qabstractslider.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qtabbar.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qframe.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/qabstractitemmodel.h \
 		../../../Qt/5.15.0/gcc_64/include/QtCore/QSize \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QTabWidget \
@@ -2724,7 +2657,22 @@ MainMenu.o: ../ProductivityTracker/MainMenu.cpp ../ProductivityTracker/MainMenu.
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenu.h \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QMenuBar \
 		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qmenubar.h \
-		ui_MainMenu.h
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qgridlayout.h \
+		ui_MainMenu.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.15.0/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.15.0/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/QStatusBar \
+		../../../Qt/5.15.0/gcc_64/include/QtWidgets/qstatusbar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainMenu.o ../ProductivityTracker/MainMenu.cpp
 
 moc_ActivityWidget.o: moc_ActivityWidget.cpp 
@@ -2742,8 +2690,8 @@ moc_MenuTab.o: moc_MenuTab.cpp
 moc_SQLClient.o: moc_SQLClient.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SQLClient.o moc_SQLClient.cpp
 
-moc_SkillOverviewWidget.o: moc_SkillOverviewWidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SkillOverviewWidget.o moc_SkillOverviewWidget.cpp
+moc_SkillManagementWidget.o: moc_SkillManagementWidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SkillManagementWidget.o moc_SkillManagementWidget.cpp
 
 moc_SkillWidget.o: moc_SkillWidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_SkillWidget.o moc_SkillWidget.cpp

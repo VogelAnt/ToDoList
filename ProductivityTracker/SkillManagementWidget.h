@@ -1,5 +1,5 @@
-#ifndef SKILLOVERVIEWWIDGET_H
-#define SKILLOVERVIEWWIDGET_H
+#ifndef SKILLMANAGEMENTWIDGET_H
+#define SKILLMANAGEMENTWIDGET_H
 #include "SkillWidget.h"
 #include "SQLClient.h"
 #include "FileManager.h"
@@ -9,21 +9,27 @@
 #include <QObject>
 #include <QWidget>
 
-class SkillOverviewWidget : public QMainWindow
+namespace Ui {
+class SkillManagementWidget;
+}
+
+class SkillManagementWidget : public QMainWindow
 {
     Q_OBJECT
+
 public:
-    explicit SkillOverviewWidget(QWidget *parent = nullptr);
+    explicit SkillManagementWidget(QWidget *parent = nullptr);
+    ~SkillManagementWidget();
 
 private:
+    void InitialSetupMenu();
     void InitialSync();
     QVBoxLayout *m_overViewlayout = nullptr;
     FileManager *m_fileMngr = nullptr;
     SQLClient *m_sqlClient = nullptr;
     QWidget *m_central = nullptr;
     QPushButton *m_addButton = nullptr;
-signals:
-
+    Ui::SkillManagementWidget *ui;
 };
 
-#endif // SKILLOVERVIEWWIDGET_H
+#endif // SKILLMANAGEMENTWIDGET_H

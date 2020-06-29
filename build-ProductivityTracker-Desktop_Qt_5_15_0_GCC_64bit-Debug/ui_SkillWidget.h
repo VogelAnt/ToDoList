@@ -11,6 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +21,39 @@ QT_BEGIN_NAMESPACE
 class Ui_SkillWidget
 {
 public:
+    QVBoxLayout *verticalLayout_2;
+    QGridLayout *gridLayout_2;
+    QLabel *m_nameLabel;
+    QLabel *label_2;
+    QLabel *m_categoryLabel;
 
     void setupUi(QWidget *SkillWidget)
     {
         if (SkillWidget->objectName().isEmpty())
             SkillWidget->setObjectName(QString::fromUtf8("SkillWidget"));
-        SkillWidget->resize(400, 300);
+        SkillWidget->resize(549, 325);
+        verticalLayout_2 = new QVBoxLayout(SkillWidget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        m_nameLabel = new QLabel(SkillWidget);
+        m_nameLabel->setObjectName(QString::fromUtf8("m_nameLabel"));
+
+        gridLayout_2->addWidget(m_nameLabel, 1, 1, 1, 1);
+
+        label_2 = new QLabel(SkillWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_2->addWidget(label_2, 2, 1, 1, 1);
+
+        m_categoryLabel = new QLabel(SkillWidget);
+        m_categoryLabel->setObjectName(QString::fromUtf8("m_categoryLabel"));
+
+        gridLayout_2->addWidget(m_categoryLabel, 2, 0, 1, 1);
+
+
+        verticalLayout_2->addLayout(gridLayout_2);
+
 
         retranslateUi(SkillWidget);
 
@@ -33,6 +63,9 @@ public:
     void retranslateUi(QWidget *SkillWidget)
     {
         SkillWidget->setWindowTitle(QCoreApplication::translate("SkillWidget", "Form", nullptr));
+        m_nameLabel->setText(QCoreApplication::translate("SkillWidget", "TextLabel", nullptr));
+        label_2->setText(QCoreApplication::translate("SkillWidget", "TextLabel", nullptr));
+        m_categoryLabel->setText(QCoreApplication::translate("SkillWidget", "TextLabel", nullptr));
     } // retranslateUi
 
 };
