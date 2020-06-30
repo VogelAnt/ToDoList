@@ -31,7 +31,7 @@ public:
     {
         if (SkillWidget->objectName().isEmpty())
             SkillWidget->setObjectName(QString::fromUtf8("SkillWidget"));
-        SkillWidget->resize(549, 325);
+        SkillWidget->resize(549, 130);
         verticalLayout_2 = new QVBoxLayout(SkillWidget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         gridLayout_2 = new QGridLayout();
